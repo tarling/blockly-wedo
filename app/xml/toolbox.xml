@@ -1,8 +1,7 @@
   <xml id="toolbox">
-    <category id="cat01" name="Start">
+    <!--<category id="cat01" name="Start">
       <block type="when_start_clicked"></block>
-      <!--<block type="when"></block>-->
-    </category>
+    </category>-->
     <category id="cat02" name="Outputs">
       <block type="wedo_turn_on"></block>
       <block type="wedo_turn_off"></block>
