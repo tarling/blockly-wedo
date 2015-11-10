@@ -7,15 +7,14 @@ define([
   var blockDefs = window.Blockly.Blocks;
   var TYPES = constants.types;
   var comps = constants.comparisons;
-  
+
   blockDefs['repeat'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField(lang.blocks.get("REPEAT"));
+          .appendField(lang.blocks.get("REPEAT-FOREVER"));
       this.appendStatementInput("block");
       this.setInputsInline(false);
       this.setPreviousStatement(true);
-      this.setNextStatement(true);
       this.setColour(constants.colors.loops);
       blockUtils.setupBlock(this);
     }

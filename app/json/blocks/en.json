@@ -6,6 +6,7 @@
   "WAIT-UNTIL": "wait until",
   "START-CLICKED": "when start is clicked",
   "REPEAT": "repeat",
+  "REPEAT-FOREVER": "repeat forever",
   "TIMES": "times",
   "REPEAT-UNTIL": "repeat until",
   "SET": "set",
