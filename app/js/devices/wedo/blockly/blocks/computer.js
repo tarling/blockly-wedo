@@ -13,7 +13,7 @@ define([
       this.appendDummyInput()
           .appendField(lang.blocks.get("DISPLAY"));
       this.appendValueInput("value")
-          .setCheck([TYPES.STRING, TYPES.NUMBER]);
+          .setCheck([TYPES.STRING, TYPES.NUMBER, TYPES.SENSOR, TYPES.VARIABLE]);
       this.setInputsInline(true);
       this.setPreviousStatement(true);
       this.setNextStatement(true);

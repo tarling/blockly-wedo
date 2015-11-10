@@ -29,7 +29,8 @@ define(["../javascript"],function(generators){
 
   generators['string'] = function(block) {
     var text_value = block.getFieldValue('value');
-    var code = text_value;
+    text_value = text_value.replace(/'/g, "\'")
+    var code = "'" + text_value + "'";
     return [code, generators.ORDER_ATOMIC];
   };
 

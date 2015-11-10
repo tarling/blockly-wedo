@@ -2,7 +2,7 @@ define(["../javascript"],function(generators){
 
   generators['log'] = function(block) {
     var value_value = generators.valueToCode(block, 'value', generators.ORDER_ATOMIC);
-    var code = 'message.write(\'' + value_value.replace(/'/g, "\'") + '\')';
+    var code = 'message.write(' + value_value + ')';
     return generators.wrap(block, code);
   };
 
