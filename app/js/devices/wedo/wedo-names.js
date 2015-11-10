@@ -20,7 +20,11 @@ define(function() {
     N_22		: "UNKNOWN" ,
     OPEN	    : "NONE" ,
     MOTOR	    : "MOTOR" ,
-    SHORTHI	    : "MOTOR SHORT"
+    SHORTHI	    : "MOTOR SHORT",
+
+    THIS_WAY: "this way",
+    THAT_WAY: "that way",
+    REVERSE: "reverse"
   }
 
 })

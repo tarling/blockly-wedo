@@ -1,8 +1,9 @@
 define([
   "../wedo-constants"
+  , "../../wedo-names"
   , "../../../../blockly/block-utils"
   , "../../../../lang"
-],function(constants, blockUtils, lang){
+],function(constants, names, blockUtils, lang){
 
   var TYPES = constants.types;
 
@@ -42,9 +43,9 @@ define([
     ]);
 
     directions = [
-      [lang.blocks.get("THIS-WAY"), "this-way"],
-      [lang.blocks.get("THAT-WAY"), "that-way"],
-      [lang.blocks.get("REVERSE"), "reverse"],
+      [lang.blocks.get("THIS-WAY"), names.THIS_WAY],
+      [lang.blocks.get("THAT-WAY"), names.THAT_WAY],
+      [lang.blocks.get("REVERSE"), names.REVERSE],
     ];
 
     inited = true;

@@ -31,7 +31,7 @@ define(["./wedo-names"], function(names) {
 
     usb.sendData(wedo, outputA, outputB);
   }
-  
+
   function checkForMotorsOff(wedo, alreadyBraked) {
       // Called on motor transition from on to off or motor power goes from non-zero to zero.
       // If both motors are just become off (or zero power), set wedo.motorOffTime to the current time.
@@ -41,7 +41,7 @@ define(["./wedo-names"], function(names) {
       if (alreadyBraked) wedo.motorOffTime +=  self.MOTOR_BRAKING_TIME;
   };
 
-  
+
 
   var MOTOR_COASTING_TIME = 700; // was 500
   var usb;
@@ -60,49 +60,49 @@ define(["./wedo-names"], function(names) {
       // motor was turned off and wait half a second before trying to read the sensor ID's
       // Cached values of the sensor ID's are used while motors are running. Thus, if a user
       // plugs a different sensor into the WeDo hub while the motors are running, the plugin
-      // won't notice until all motors are stopped.     
+      // won't notice until all motors are stopped.
       if (wedo.states[0].isOn || wedo.states[1].isOn) return false;
       return (new Date().getTime() - wedo.motorOffTime) > MOTOR_COASTING_TIME;
   };
-  
+
   self.deviceOnOff = function(wedo, slotIndex, onOff, alreadyBraked) {
-  
+
     var wasOn;
     var motor = isMotor(wedo, slotIndex);
-  
+
     if (motor) wasOn = isMoving(wedo, slotIndex);
     wedo.states[slotIndex].isOn = (onOff == true);
     if (motor && wasOn) checkForMotorsOff(wedo, alreadyBraked);
 
     sendOutputReport(wedo);
   };
-  
+
   self.power = function(wedo, slotIndex, value) {
     var power = Math.max(0, Math.min(value, 100));
     wedo.states[slotIndex].power = power;
   }
-  
+
   self.direction = function(wedo, slotIndex, dirName) {
 
     var newDir;
     switch(dirName) {
-      case "this way":
+      case names.THIS_WAY:
           newDir = 1;
           break;
-      case "that way":
+      case names.THAT_WAY:
           newDir = -1;
           break;
-      case "reverse":
+      case names.REVERSE:
           newDir = 0;
           break;
       default:
           return;
           break;
     }
-    
+
     if (newDir == -1 || newDir == 1) wedo.states[slotIndex].dir = newDir;
     if (newDir == 0) wedo.states[slotIndex].dir = -wedo.states[slotIndex].dir;
-    
+
     sendOutputReport(wedo);
   }
 
@@ -116,7 +116,7 @@ define(["./wedo-names"], function(names) {
   };
 
 
-  
+
 
   return self;
 
