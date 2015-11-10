@@ -1,0 +1,19 @@
+.lock,
+li#tab-blocks > a > .lock {
+  display: none;
+}
+
+li.active > a > .lock,
+.locked li#tab-blocks.active > a > .lock  {
+  display: initial;
+}
+
+span.glyphicon.glyphicon-lock {
+  margin-left: 10px;
+  color: rgb(187, 187, 187);
+  font-size: 11px;
+}
+
+#tab-js {
+  display: none;
+}

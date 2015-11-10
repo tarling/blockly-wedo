@@ -1,0 +1,56 @@
+#device {
+
+  #device-info {
+    padding: 10px $left-margin;
+  }
+
+  .connected {
+    display: none;
+  }
+
+  .connection div {
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+  }
+
+  .connected {
+    background-image: url("../res/ext-status-green.png");
+  }
+
+  .not-connected {
+    background-image: url("../res/ext-status-red.png");
+    color: #AEAEAE;
+  }
+
+  .controls {
+    padding: 8px 0 7px $left-margin;
+    button {
+      &#sim-run {
+        background-color: #4CAF50;
+      }
+      &#sim-reset {
+        background-color: #F44336;
+      }
+      color: white;
+
+      &.disabled {
+        background-color: #A5A5A5;
+      }
+    }
+
+    input[type=range] {
+      margin: 15px 0;
+    }
+  }
+
+  .message {
+    font-family: monospace;
+    height: 100px;
+    background-color: #EAEAEA;
+    color: black;
+    font-size: 12px;
+    padding: 5px 10px 5px $left-margin;
+    overflow-y: auto;
+  }
+}

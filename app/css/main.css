@@ -1,0 +1,384 @@
+/* Template-specific stuff
+ *
+ * Customizations just for the template; these are not necessary for anything
+ * with disabling the responsiveness.
+ */
+html > body,
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  min-width: 450px; }
+
+/* Don't let the lead text change font-size. */
+.lead {
+  font-size: 16px; }
+
+/* Finesse the page header spacing */
+.page-header {
+  margin-bottom: 30px; }
+
+.page-header .lead {
+  margin-bottom: 10px; }
+
+/* Non-responsive overrides
+ *
+ * Utilize the following CSS to disable the responsive-ness of the container,
+ * grid system, and navbar.
+ */
+/* Reset the container */
+.container {
+  width: 970px;
+  max-width: none !important; }
+
+/* Demonstrate the grids */
+.col-xs-4 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #eee;
+  background-color: rgba(86, 61, 124, 0.15);
+  border: 1px solid #ddd;
+  border: 1px solid rgba(86, 61, 124, 0.2); }
+
+.container .navbar-header,
+.container .navbar-collapse {
+  margin-right: 0;
+  margin-left: 0; }
+
+/* Always float the navbar header */
+.navbar-header {
+  float: left; }
+
+/* Undo the collapsing navbar */
+.navbar-collapse {
+  display: block !important;
+  height: auto !important;
+  padding-bottom: 0;
+  overflow: visible !important;
+  visibility: visible !important; }
+
+.navbar-toggle {
+  display: none; }
+
+.navbar-collapse {
+  border-top: 0; }
+
+/*.navbar-brand {
+  margin-left: -15px;
+}*/
+/* Always apply the floated nav */
+.navbar-nav {
+  float: left;
+  margin: 0; }
+
+.navbar-nav > li {
+  float: left; }
+
+.navbar-nav > li > a {
+  padding: 15px; }
+
+/* Redeclare since we override the float above */
+.navbar-nav.navbar-right {
+  float: right; }
+
+/* Undo custom dropdowns */
+.navbar .navbar-nav .open .dropdown-menu {
+  position: absolute;
+  float: left;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-width: 0 1px 1px;
+  border-radius: 0 0 4px 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175); }
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: #333; }
+
+.navbar .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > li > a:focus,
+.navbar .navbar-nav .open .dropdown-menu > .active > a,
+.navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #fff !important;
+  background-color: #428bca !important; }
+
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a,
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+  color: #999 !important;
+  background-color: transparent !important; }
+
+/* Undo form expansion */
+.navbar-form {
+  float: left;
+  width: auto;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: 0;
+  margin-left: 0;
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
+/* Copy-pasted from forms.less since we mixin the .form-inline styles. */
+.navbar-form .form-group {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle; }
+
+.navbar-form .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle; }
+
+.navbar-form .form-control-static {
+  display: inline-block; }
+
+.navbar-form .input-group {
+  display: inline-table;
+  vertical-align: middle; }
+
+.navbar-form .input-group .input-group-addon,
+.navbar-form .input-group .input-group-btn,
+.navbar-form .input-group .form-control {
+  width: auto; }
+
+.navbar-form .input-group > .form-control {
+  width: 100%; }
+
+.navbar-form .control-label {
+  margin-bottom: 0;
+  vertical-align: middle; }
+
+.navbar-form .radio,
+.navbar-form .checkbox {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  vertical-align: middle; }
+
+.navbar-form .radio label,
+.navbar-form .checkbox label {
+  padding-left: 0; }
+
+.navbar-form .radio input[type="radio"],
+.navbar-form .checkbox input[type="checkbox"] {
+  position: relative;
+  margin-left: 0; }
+
+.navbar-form .has-feedback .form-control-feedback {
+  top: 0; }
+
+/* Undo inline form compaction on small screens */
+.form-inline .form-group {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle; }
+
+.form-inline .form-control {
+  display: inline-block;
+  width: auto;
+  vertical-align: middle; }
+
+.form-inline .form-control-static {
+  display: inline-block; }
+
+.form-inline .input-group {
+  display: inline-table;
+  vertical-align: middle; }
+
+.form-inline .input-group .input-group-addon,
+.form-inline .input-group .input-group-btn,
+.form-inline .input-group .form-control {
+  width: auto; }
+
+.form-inline .input-group > .form-control {
+  width: 100%; }
+
+.form-inline .control-label {
+  margin-bottom: 0;
+  vertical-align: middle; }
+
+.form-inline .radio,
+.form-inline .checkbox {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  vertical-align: middle; }
+
+.form-inline .radio label,
+.form-inline .checkbox label {
+  padding-left: 0; }
+
+.form-inline .radio input[type="radio"],
+.form-inline .checkbox input[type="checkbox"] {
+  position: relative;
+  margin-left: 0; }
+
+.form-inline .has-feedback .form-control-feedback {
+  top: 0; }
+
+html {
+  height: 100%; }
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
+
+header .navbar-brand {
+  width: 250px; }
+
+main {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1; }
+
+#device {
+  width: 250px; }
+  #device .panel-body {
+    height: 230px;
+    overflow-y: auto; }
+
+#editor {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: 7px; }
+  #editor #panes {
+    position: relative;
+    flex-grow: 1; }
+    #editor #panes .tab-pane {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      visibility: hidden; }
+      #editor #panes .tab-pane.active {
+        visibility: visible; }
+      #editor #panes .tab-pane > * {
+        width: 100%;
+        height: 100%; }
+  #editor #messages {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 400px;
+    bottom: 20px;
+    margin: auto; }
+
+.blocklyToolboxDiv {
+  display: none; }
+
+.blocks-active .blocklyToolboxDiv {
+  display: block; }
+
+header h1 {
+  background-color: #0f8bc0;
+  color: white;
+  font-size: 20px;
+  margin: 0;
+  padding: 15px;
+  box-shadow: #cccccc 0px 1px 1px 0px;
+  background-image: url("../res/brick-128.png");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-size: 80px; }
+
+header #version {
+  position: fixed;
+  right: 95px;
+  top: 15px;
+  color: white;
+  letter-spacing: 1px; }
+
+header nav.navbar {
+  margin-bottom: 0;
+  padding-right: 15px; }
+
+#device #device-info {
+  padding: 10px 15px; }
+
+#device .connected {
+  display: none; }
+
+#device .connection div {
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: center; }
+
+#device .connected {
+  background-image: url("../res/ext-status-green.png"); }
+
+#device .not-connected {
+  background-image: url("../res/ext-status-red.png");
+  color: #AEAEAE; }
+
+#device .controls {
+  padding: 8px 0 7px 15px; }
+  #device .controls button {
+    color: white; }
+    #device .controls button#sim-run {
+      background-color: #4CAF50; }
+    #device .controls button#sim-reset {
+      background-color: #F44336; }
+    #device .controls button.disabled {
+      background-color: #A5A5A5; }
+  #device .controls input[type=range] {
+    margin: 15px 0; }
+
+#device .message {
+  font-family: monospace;
+  height: 100px;
+  background-color: #EAEAEA;
+  color: black;
+  font-size: 12px;
+  padding: 5px 10px 5px 15px;
+  overflow-y: auto; }
+
+textarea {
+  border: none;
+  font-family: monospace;
+  tab-size: 4; }
+
+.lock,
+li#tab-blocks > a > .lock {
+  display: none; }
+
+li.active > a > .lock,
+.locked li#tab-blocks.active > a > .lock {
+  display: initial; }
+
+span.glyphicon.glyphicon-lock {
+  margin-left: 10px;
+  color: #bbbbbb;
+  font-size: 11px; }
+
+#tab-js {
+  display: none; }
+
+body {
+  background-color: #F9F9F9;
+  font-family: 'helvetica neue', arial, sans-serif; }
+
+.log {
+  font-family: monospace;
+  white-space: pre; }
+
+.tab-pane {
+  box-shadow: rgba(34, 25, 25, 0.298039) 0px 2px 3px 0px; }
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover {
+  font-weight: bold; }
+
+.modal-content {
+  margin-top: 102px; }
+
+.tab-pane {
+  padding: 0; }
+
+.tab-pane.active {
+  visibility: visible; }

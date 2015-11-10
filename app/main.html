@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- build:blockly-js -->
+    <script src="lib/blockly/blockly_compressed.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js main.js -->
+    <script data-main="js/main.js" src="lib/require.js"></script>
+    <!-- endbuild -->
+
+    <title>...</title>
+  </head>
+  <body>
+    <header>
+     <h1>...</h1>
+     <span id="version"></span>
+     <nav class="navbar navbar-default">
+      <ul id="main-nav" class="nav navbar-nav">
+        <!-- menus inserted here -->
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown" data-select="true">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span id="languageMenuLabel" class="dropdown-label"></span><span class="caret"></span></a>
+          <ul id="languageMenu" class="dropdown-menu" role="menu"></ul>
+        </li>
+      </ul>
+    </nav>
+   </header>
+   <main>
+     <div id="device">
+       <div class="controls">
+        <button id="sim-run" class="btn"><span class="glyphicon glyphicon-play"/></button>
+        <button id="sim-reset" class="btn"><span class="glyphicon glyphicon-stop"/></button>
+        <!--<input id="sim-speed" type="range" data-show-value="true">-->
+      </div><!-- /.controls -->
+      <div class="message"></div>
+      <div id="device-info"></div>
+     </div>
+     <div id="editor">
+       <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+         <li id="tab-blocks" class="active"><a href="#pane-blocks" data-toggle="tab"><span class="tab-label">...</span><span class="lock"></span></a></li>
+         <li id="tab-js"><a href="#pane-js" data-toggle="tab"><span class="tab-label">...</span><span class="lock"></span></a></li>
+         <li id="tab-xml"><a href="#pane-xml" data-toggle="tab"><span class="tab-label">...</span><span class="lock"></span></a></li>
+       </ul>
+       <div id="panes">
+         <div class="tab-pane active" id="pane-blocks">
+           <div id="content-blocks"></div>
+         </div>
+         <div class="tab-pane" id="pane-js">
+             <textarea id="content-js"></textarea>
+         </div>
+         <div class="tab-pane" id="pane-xml">
+           <textarea id="content-xml"></textarea>
+         </div>
+       </div><!-- /#panes -->
+       <div id="messages"></div>
+     </div>
+   </main>
+   <div id="modals" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="true">
+      <div id="confirm-msg" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default accept"></button>
+              <button type="button" class="btn btn-default decline"></button>
+            </div>
+          </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /#modals -->
+  </body>
+</html>

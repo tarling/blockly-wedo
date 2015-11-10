@@ -1,0 +1,141 @@
+  <xml id="toolbox">
+    <category id="cat01" name="Start">
+      <block type="when_start_clicked"></block>
+      <!--<block type="when"></block>-->
+    </category>
+    <category id="cat02" name="Outputs">
+      <block type="wedo_turn_on"></block>
+      <block type="wedo_turn_off"></block>
+      <block type="wedo_turn_on_for">
+        <field name="type">motor</field>
+          <value name="time">
+            <block type="number">
+              <field name="value">2</field>
+            </block>
+          </value>
+      </block>
+      <block type="wedo_power">
+        <field name="type">motor</field>
+          <value name="power">
+            <block type="number" id="17">
+              <field name="value">50</field>
+            </block>
+          </value>
+      </block>
+      <block type="wedo_motor_direction"></block>
+    </category>
+    <category id="cat03" name="Sensors">
+      <block type="wedo_if">
+        <field name="comp">&lt;=</field>
+        <value name="input">
+          <block type="sensor">
+            <field name="sensor">DISTANCE</field>
+          </block>
+        </value>
+        <value name="value">
+          <block type="number">
+            <field name="value">30</field>
+          </block>
+        </value>
+      </block>
+      <block type="wedo_if_else">
+        <field name="comp">&lt;=</field>
+        <value name="input">
+          <block type="sensor">
+            <field name="sensor">DISTANCE</field>
+          </block>
+        </value>
+        <value name="value">
+          <block type="number">
+            <field name="value">30</field>
+          </block>
+        </value>
+      </block>
+      <block type="sensor"></block>
+      <block type="tilt_value"></block>
+    </category>
+    <category id="cat04" name="Delays">
+      <block type="wait">
+        <value name="time">
+          <block type="number">
+            <field name="value">1</field>
+          </block>
+        </value>
+      </block>
+      <block type="wait_until">
+        <field name="comp">&lt;=</field>
+        <value name="input">
+          <block type="sensor">
+            <field name="sensor">DISTANCE</field>
+          </block>
+        </value>
+        <value name="value">
+          <block type="number">
+            <field name="value">30</field>
+          </block>
+        </value>
+      </block>
+    </category>
+    <category id="cat05" name="Loops">
+      <block type="repeat"></block>
+      <block type="repeat_count">
+        <value name="count">
+          <block type="number">
+            <field name="value">3</field>
+          </block>
+        </value>
+      </block>
+      <block type="repeat_until">
+        <field name="comp">&gt;=</field>
+        <value name="value1">
+          <block type="sensor">
+            <field name="sensor">TILT</field>
+          </block>
+        </value>
+        <value name="value2">
+          <block type="number">
+            <field name="value">50</field>
+          </block>
+        </value>
+      </block>
+    </category>
+    <category id="cat06" name="Variables">
+      <block type="var_set">
+        <field name="var">varA</field>
+        <value name="value">
+          <block type="number">
+            <field name="value">50</field>
+          </block>
+        </value>
+      </block>
+      <block type="var_random"></block>
+      <block type="var_inc">
+        <value name="value">
+          <block type="number">
+            <field name="value">3</field>
+          </block>
+        </value>
+      </block>
+      <block type="var_dec">
+        <value name="value">
+          <block type="number">
+            <field name="value">3</field>
+          </block>
+        </value>
+      </block>
+      <block type="variable"></block>
+      <block type="string"></block>
+      <block type="number"></block>
+      <block type="sensor"></block>
+    </category>
+    <category id="cat07" name="Computer">
+      <block type="log">
+      <value name="value">
+          <block type="string">
+            <field name="value">Hello world!</field>
+          </block>
+        </value>
+      </block>
+      <block type="log_clear"></block>
+    </category>
+  </xml>

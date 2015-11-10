@@ -1,0 +1,20 @@
+#pane-wedo .table-wrapper {
+  margin-top: 15px; }
+  #pane-wedo .table-wrapper .table {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+    #pane-wedo .table-wrapper .table col:nth-of-type(1) {
+      width: 10%; }
+    #pane-wedo .table-wrapper .table col:nth-of-type(2) {
+      width: 70%; }
+    #pane-wedo .table-wrapper .table col:nth-of-type(3) {
+      width: 20%; }
+    #pane-wedo .table-wrapper .table th {
+      text-align: center; }
+    #pane-wedo .table-wrapper .table .slot-type {
+      padding-left: 20px !important; }
+    #pane-wedo .table-wrapper .table .slot-value {
+      text-align: center; }
+
+#pane-wedo .req {
+  display: none; }

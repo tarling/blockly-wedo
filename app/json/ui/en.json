@@ -1,0 +1,54 @@
+{
+    "TITLE": "WeDo Blockly",
+    "TAB_BLOCKS": "Blocks",
+    "TAB_JS": "Javascript",
+    "TAB_XML": "XML",
+
+    "cat01": "Start",
+    "cat02": "Outputs",
+    "cat03": "Sensors",
+    "cat04": "Delays",
+    "cat05": "Loops",
+    "cat06": "Variables",
+    "cat07": "Computer",
+
+    "VALUE_CHANGED":"N.B. Your value has been changed from <strong>%1</strong> to <strong>%2</strong>",
+    "BAD_VAR_NAME":"N.B. Variable names must start with a letter, and contain only letters, numbers or underscores",
+    "RESERVED_VAR_NAME":"N.B. The name %1 is already used",
+
+    "BLOCKS_IGNORED":"N.B. Any blocks not connected to a start block have been ignored",
+    "NO_START_BLOCK":"N.B. There is no start block, so no code has been generated",
+
+    "m-project": "Project",
+    "pm-new": "New",
+    "pm-open": "Open",
+    "pm-save": "Save",
+    "pm-saveas": "Save as",
+    "m-blocks-edit": "Edit",
+    "bem-undo": "Undo",
+    "bem-redo": "Redo",
+    "bem-cut": "Cut",
+    "bem-copy": "Copy",
+    "bem-paste": "Paste",
+
+    "MISSING_BLOCKS": "Please add the missing blocks",
+
+    "MESSAGE_DEFAULT" : "Messages sent by \"display\" blocks will appear here",
+
+    "WEDO_CONNECTION_N": "%1 WeDos are connected",
+    "WEDO_CONNECTION_1": "WeDo is connected",
+    "WEDO_NO_CONNECTION": "WeDo is not connected",
+    "DEVICE_OFF": "off",
+    "DEVICE_SENSOR": "sensor",
+    
+    "WARNING": "Warning",
+    "LOSE_CHANGES_WARNING": "You will lose any changes you have made to your program",
+    "NEW_PROJECT_ACTION": "New project",
+    "OK_ACTION": "OK",
+    "CANCEL_ACTION": "Cancel",
+    "MERGE_PROJECT": "Merge project",
+    "MERGE_PROMPT": "Do you want to merge the new project with your existing project?",
+    "MERGE_ACTION": "Merge projects",
+    "DONT_MERGE_ACTION": "Discard existing project"
+
+}
