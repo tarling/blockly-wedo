@@ -8,7 +8,7 @@ define(function(){
       VARIABLE: "Variable",
       TILT: "Tilt"
     },
-    comparisons: [["=", "=="], ["!=", "!="], [">", ">"], [">=", ">="], ["<", "<"], ["<=", "<="]],
+    comparisons: [["=", "=="], [">", ">"], ["<", "<"], [">=", ">="], ["<=", "<="], ["not =", "!="]],
     colors: {
       default: "#bbbbbb",
       start: "#007a29",

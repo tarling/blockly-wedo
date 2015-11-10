@@ -25,7 +25,7 @@
     </category>
     <category id="cat03" name="Sensors">
       <block type="wedo_if">
-        <field name="comp">&lt;=</field>
+        <field name="comp">==</field>
         <value name="input">
           <block type="sensor">
             <field name="sensor">DISTANCE</field>
@@ -38,7 +38,7 @@
         </value>
       </block>
       <block type="wedo_if_else">
-        <field name="comp">&lt;=</field>
+        <field name="comp">==</field>
         <value name="input">
           <block type="sensor">
             <field name="sensor">DISTANCE</field>
@@ -62,7 +62,7 @@
         </value>
       </block>
       <block type="wait_until">
-        <field name="comp">&lt;=</field>
+        <field name="comp">==</field>
         <value name="input">
           <block type="sensor">
             <field name="sensor">DISTANCE</field>
@@ -85,7 +85,7 @@
         </value>
       </block>
       <block type="repeat_until">
-        <field name="comp">&gt;=</field>
+        <field name="comp">==</field>
         <value name="value1">
           <block type="sensor">
             <field name="sensor">TILT</field>
