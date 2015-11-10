@@ -1,5 +1,5 @@
 {
-    "TITLE": "WeDo Blockly",
+    "TITLE": "Blockly for WeDo",
     "TAB_BLOCKS": "Blocks",
     "TAB_JS": "Javascript",
     "TAB_XML": "XML",
@@ -40,7 +40,7 @@
     "WEDO_NO_CONNECTION": "WeDo is not connected",
     "DEVICE_OFF": "off",
     "DEVICE_SENSOR": "sensor",
-    
+
     "WARNING": "Warning",
     "LOSE_CHANGES_WARNING": "You will lose any changes you have made to your program",
     "NEW_PROJECT_ACTION": "New project",
