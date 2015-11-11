@@ -1,8 +1,7 @@
 define(["../javascript"],function(generators){
 
   generators['when_start_clicked'] = function(block) {
-    var statements_block = generators.statementToCode(block, 'block');
-    var code = 'function onStart(){\n' + statements_block + '}';
+    var code = "//start";
     return generators.wrap(block, code);
   };
 

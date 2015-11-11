@@ -18,12 +18,18 @@ define([
       this.appendDummyInput()
           .appendField(lang.blocks.get("TO"));
       this.appendValueInput("value")
-          .setCheck([TYPES.NUMBER, TYPES.SENSOR]);
+          .setCheck([TYPES.NUMBER, TYPES.SENSOR, TYPES.VARIABLE]);
       this.setInputsInline(true);
       this.setPreviousStatement(true);
       this.setNextStatement(true);
       this.setColour(constants.colors.variables);
       blockUtils.setupBlock(this);
+    },
+    getVars: function() {
+      return blockUtils.getAllVars(this, ["var"]);
+    },
+    renameVar: function(oldName, newName) {
+      return blockUtils.renameVar(this, ["var"], oldName, newName);
     }
   };
 
@@ -40,6 +46,12 @@ define([
       this.setNextStatement(true);
       this.setColour(constants.colors.variables);
       blockUtils.setupBlock(this);
+    },
+    getVars: function() {
+      return blockUtils.getAllVars(this, ["var"]);
+    },
+    renameVar: function(oldName, newName) {
+      return blockUtils.renameVar(this, ["var"], oldName, newName);
     }
   };
 
@@ -52,12 +64,18 @@ define([
       this.appendDummyInput()
           .appendField(lang.blocks.get("BY"));
       this.appendValueInput("value")
-          .setCheck([TYPES.NUMBER, TYPES.SENSOR]);
+          .setCheck([TYPES.NUMBER, TYPES.SENSOR, TYPES.VARIABLE]);
       this.setInputsInline(true);
       this.setPreviousStatement(true);
       this.setNextStatement(true);
       this.setColour(constants.colors.variables);
       blockUtils.setupBlock(this);
+    },
+    getVars: function() {
+      return blockUtils.getAllVars(this, ["var"]);
+    },
+    renameVar: function(oldName, newName) {
+      return blockUtils.renameVar(this, ["var"], oldName, newName);
     }
   };
 
@@ -70,12 +88,18 @@ define([
       this.appendDummyInput()
           .appendField(lang.blocks.get("BY"));
       this.appendValueInput("value")
-          .setCheck([TYPES.NUMBER, TYPES.SENSOR]);
+          .setCheck([TYPES.NUMBER, TYPES.SENSOR, TYPES.VARIABLE]);
       this.setInputsInline(true);
       this.setPreviousStatement(true);
       this.setNextStatement(true);
       this.setColour(constants.colors.variables);
       blockUtils.setupBlock(this);
+    },
+    getVars: function() {
+      return blockUtils.getAllVars(this, ["var"]);
+    },
+    renameVar: function(oldName, newName) {
+      return blockUtils.renameVar(this, ["var"], oldName, newName);
     }
   };
 
@@ -85,6 +109,12 @@ define([
           .appendField(new AppFieldVariable("varA"), "var");
       this.setOutput(true, TYPES.VARIABLE);
       this.setColour(constants.colors.variables);
+    },
+    getVars: function() {
+      return blockUtils.getAllVars(this, ["var"]);
+    },
+    renameVar: function(oldName, newName) {
+      return blockUtils.renameVar(this, ["var"], oldName, newName);
     }
   };
 

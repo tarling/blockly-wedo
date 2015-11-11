@@ -37,7 +37,7 @@ define([
       this.appendDummyInput()
           .appendField(new Blockly.FieldDropdown(comps), "comp");
       this.appendValueInput("value")
-          .setCheck([TYPES.NUMBER, TYPES.TILT]);
+          .setCheck([TYPES.NUMBER, TYPES.TILT, TYPES.VARIABLE]);
       this.appendStatementInput("block");
       this.setColour(constants.colors.flow);
       this.setInputsInline(true);
@@ -59,7 +59,7 @@ define([
       this.appendDummyInput()
           .appendField(new Blockly.FieldDropdown(comps), "comp");
       this.appendValueInput("value")
-          .setCheck([TYPES.NUMBER, TYPES.TILT]);
+          .setCheck([TYPES.NUMBER, TYPES.TILT, TYPES.VARIABLE]);
       this.appendStatementInput("trueblock");
       this.appendDummyInput()
           .appendField(lang.blocks.get("ELSE"));

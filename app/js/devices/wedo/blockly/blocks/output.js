@@ -87,7 +87,7 @@ define([
           .appendField(new Blockly.FieldDropdown(outputs), "type")
           .appendField(lang.blocks.get("ON-FOR"));
       this.appendValueInput("time")
-          .setCheck([TYPES.NUMBER]);
+          .setCheck([TYPES.NUMBER, TYPES.VARIABLE]);
       this.appendDummyInput()
           .appendField(lang.blocks.get("SECS"));
       this.setColour(constants.colors.output);
@@ -106,7 +106,7 @@ define([
           .appendField(new Blockly.FieldDropdown(outputs), "type")
           .appendField(lang.blocks.get("POWER-TO"));
       this.appendValueInput("power")
-          .setCheck([TYPES.NUMBER]);
+          .setCheck([TYPES.NUMBER, TYPES.VARIABLE]);
       this.setColour(constants.colors.output);
       this.setPreviousStatement(true);
       this.setNextStatement(true);

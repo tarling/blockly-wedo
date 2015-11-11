@@ -14,7 +14,7 @@ define([
       this.appendDummyInput()
           .appendField(lang.blocks.get("WAIT"));
       this.appendValueInput("time")
-          .setCheck([TYPES.NUMBER]);
+          .setCheck([TYPES.NUMBER, TYPES.VARIABLE]);
       this.appendDummyInput()
           .appendField(lang.blocks.get("SECS"));
       this.setInputsInline(true);
@@ -34,7 +34,7 @@ define([
       this.appendDummyInput()
           .appendField(new Blockly.FieldDropdown(comps), "comp");
       this.appendValueInput("value")
-          .setCheck([TYPES.NUMBER, TYPES.TILT]);
+          .setCheck([TYPES.NUMBER, TYPES.TILT, TYPES.VARIABLE]);
       this.setInputsInline(true);
       this.setPreviousStatement(true);
       this.setNextStatement(true);

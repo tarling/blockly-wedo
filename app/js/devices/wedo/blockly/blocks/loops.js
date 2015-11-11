@@ -25,7 +25,7 @@ define([
       this.appendDummyInput()
           .appendField(lang.blocks.get("REPEAT"));
       this.appendValueInput("count")
-          .setCheck([TYPES.NUMBER]);
+          .setCheck([TYPES.NUMBER, TYPES.VARIABLE]);
       this.appendDummyInput()
           .appendField(lang.blocks.get("TIMES"));
       this.appendStatementInput("block");
@@ -42,11 +42,11 @@ define([
       this.appendDummyInput()
           .appendField(lang.blocks.get("REPEAT-UNTIL"));
       this.appendValueInput("value1")
-          .setCheck([TYPES.NUMBER, TYPES.SENSOR]);
+          .setCheck([TYPES.NUMBER, TYPES.SENSOR, TYPES.VARIABLE]);
       this.appendDummyInput()
           .appendField(new Blockly.FieldDropdown(comps), "comp");
       this.appendValueInput("value2")
-          .setCheck([TYPES.NUMBER, TYPES.SENSOR]);
+          .setCheck([TYPES.NUMBER, TYPES.SENSOR, TYPES.VARIABLE]);
       this.appendStatementInput("block");
       this.setInputsInline(true);
       this.setPreviousStatement(true);

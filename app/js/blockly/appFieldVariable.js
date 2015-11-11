@@ -129,7 +129,7 @@ define([
           var checked = opt_changeHandler.call(thisObj, newVal);
           if (checked === null)
           {
-            newVal = Blockly.Blocks.Picaxe.defaultVarName;
+            newVal = "varA";
           }
           else
           {
@@ -151,7 +151,7 @@ define([
     Blockly.FieldVariable.superClass_.constructor.call(this,
       Blockly.FieldVariable.dropdownCreate, changeHandler);
 
-    this.setValue(varname || '');
+      this.setValue(varname || '');
 
   }
 

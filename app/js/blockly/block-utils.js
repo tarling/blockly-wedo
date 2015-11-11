@@ -29,6 +29,22 @@ define([
     block.onchange = onchange;
   }
 
+  self.getAllVars = function(block, vars) {
+    return vars.map(function(v){
+      return block.getFieldValue(v);
+    });
+  };
+
+  self.renameVar = function(block, vars, oldName, newName) {
+
+    vars.forEach(function(v){
+      var val = block.getFieldValue(v);
+      if (val && Blockly.Names.equals(oldName, val)) {
+        block.setTitleValue(newName, v);
+      }
+    });
+  }
+
   return self;
 
 });

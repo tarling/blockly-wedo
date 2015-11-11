@@ -145,28 +145,11 @@ define([
     }
   }
 
-  /*generator.workspaceToCode = function(stepMode_) {
-
-    stepMode = stepMode_;
-    stepMode = true;
-    var out = Blockly.Generator.prototype.workspaceToCode.call(this, Blockly.mainWorkspace);
-
-    if (stepMode)
-    {
-      out += "onStart();"
-    }
-
-
-    stepMode = false;
-    return out;
-  }*/
-
   generator.workspaceToCode = function(step) {
 
     stepMode = step;
     stepMode = true;
 
-    generator.parseError = null;
     innerStepsLookup = {};
     var workspace = Blockly.mainWorkspace;
 
@@ -189,7 +172,6 @@ define([
       }
     });
 
-    generator.parseError = null;
     generator.BLOCKS_IGNORED = "BLOCKS_IGNORED";
     generator.NO_START_BLOCK = "NO_START_BLOCK";
 
@@ -300,7 +282,7 @@ define([
       if (block.warning){
         code = blocklyConstants.WARNING_COMMAND + "(" + block.id + ");\n" + code;
       }
-      code = code + "\n" + blocklyConstants.POSTSTEP_PREFIX + "(" + block.id + ");";
+      code = code + ";\n" + blocklyConstants.POSTSTEP_PREFIX + "(" + block.id + ")";
     }
     return code + ";\n";
   }
