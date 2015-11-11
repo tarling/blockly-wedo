@@ -125,7 +125,7 @@ define([
     for (var x = 0; x < variables.length; x++) {
       defvars[x] = 'var ' +
           generator.variableDB_.getName(variables[x],
-          Blockly.Variables.NAME_TYPE) + ';';
+          Blockly.Variables.NAME_TYPE) + ' = 0;';
     }
     generator.definitions_['variables'] = defvars.join('\n');
   };
