@@ -24,12 +24,6 @@
   "POWER-TO": "power to",
   "DIRECTION-TO": "direction to",
 
-  "UP": "up",
-  "DOWN": "down",
-  "LEFT": "left",
-  "RIGHT": "right",
-  "LEVEL": "level",
-
   "TILT": "tilt",
   "MOTION": "distance",
   "MOTOR": "motor",

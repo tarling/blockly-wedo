@@ -1,11 +1,10 @@
 define([
   "../wedo-constants"
-  , "../wedo-block-utils"
   , "../../wedo-names"
   , "../../../../blockly/block-utils"
   , "../../../../lang"
 
-],function(constants, wedoBlockUtils, names, blockUtils, lang){
+],function(constants, names, blockUtils, lang){
 
   var blockDefs = window.Blockly.Blocks;
 
@@ -37,15 +36,13 @@ define([
       this.appendDummyInput()
           .appendField(new Blockly.FieldDropdown(comps), "comp");
       this.appendValueInput("value")
-          .setCheck([TYPES.NUMBER, TYPES.TILT, TYPES.VARIABLE]);
+          .setCheck([TYPES.NUMBER, TYPES.VARIABLE]);
       this.appendStatementInput("block");
       this.setColour(constants.colors.flow);
       this.setInputsInline(true);
       this.setPreviousStatement(true);
       this.setNextStatement(true);
-      //blockUtils.setupBlock(this);
-
-      this.onchange = wedoBlockUtils.setSensorValueType;
+      blockUtils.setupBlock(this);
     }
   };
 
@@ -59,7 +56,7 @@ define([
       this.appendDummyInput()
           .appendField(new Blockly.FieldDropdown(comps), "comp");
       this.appendValueInput("value")
-          .setCheck([TYPES.NUMBER, TYPES.TILT, TYPES.VARIABLE]);
+          .setCheck([TYPES.NUMBER, TYPES.VARIABLE]);
       this.appendStatementInput("trueblock");
       this.appendDummyInput()
           .appendField(lang.blocks.get("ELSE"));
@@ -68,8 +65,7 @@ define([
       this.setInputsInline(true);
       this.setPreviousStatement(true);
       this.setNextStatement(true);
-
-      this.onchange = wedoBlockUtils.setSensorValueType;
+      blockUtils.setupBlock(this);
     }
   };
 
@@ -80,16 +76,6 @@ define([
       this.appendDummyInput()
           .appendField(new Blockly.FieldDropdown([[lang.blocks.get("TILT"), names.TILT], [lang.blocks.get("MOTION"), names.MOTION]]), "sensor");
       this.setOutput(true, TYPES.SENSOR);
-      this.setColour(constants.colors.input);
-    }
-  };
-
-  blockDefs['tilt_value'] = {
-    init: function() {
-      initMsg();
-      this.appendDummyInput()
-          .appendField(new Blockly.FieldDropdown(tiltDirections), "tilt");
-      this.setOutput(true, TYPES.TILT);
       this.setColour(constants.colors.input);
     }
   };

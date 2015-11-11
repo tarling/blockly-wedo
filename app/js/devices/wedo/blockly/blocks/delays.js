@@ -1,9 +1,8 @@
 define([
   "../wedo-constants"
-  , "../wedo-block-utils"
   , "../../../../blockly/block-utils"
   , "../../../../lang"
-],function(constants, wedoBlockUtils, blockUtils, lang){
+],function(constants, blockUtils, lang){
 
   var blockDefs = window.Blockly.Blocks;
   var TYPES = constants.types;
@@ -34,13 +33,12 @@ define([
       this.appendDummyInput()
           .appendField(new Blockly.FieldDropdown(comps), "comp");
       this.appendValueInput("value")
-          .setCheck([TYPES.NUMBER, TYPES.TILT, TYPES.VARIABLE]);
+          .setCheck([TYPES.NUMBER, TYPES.VARIABLE]);
       this.setInputsInline(true);
       this.setPreviousStatement(true);
       this.setNextStatement(true);
       this.setColour(constants.colors.delays);
-
-      this.onchange = wedoBlockUtils.setSensorValueType;
+      blockUtils.setupBlock(this);
     }
   };
 

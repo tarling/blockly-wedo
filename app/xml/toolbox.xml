@@ -51,7 +51,6 @@
         </value>
       </block>
       <block type="sensor"></block>
-      <block type="tilt_value"></block>
     </category>
     <category id="cat04" name="Delays">
       <block type="wait">
