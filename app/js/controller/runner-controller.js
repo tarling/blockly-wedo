@@ -59,7 +59,6 @@ define([
 
   events.inited.addOnce(function(){
     controls.reset();
-    message.reset();
   });
 
 });

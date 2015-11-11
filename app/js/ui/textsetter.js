@@ -18,6 +18,8 @@ define([
     set("#tab-blocks .tab-label", "TAB_BLOCKS");
     set("#tab-js .tab-label", "TAB_JS");
     set("#tab-xml .tab-label", "TAB_XML");
+
+    set(".message", "MESSAGE_DEFAULT");
   }
 
   return self;

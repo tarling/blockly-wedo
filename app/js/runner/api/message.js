@@ -13,7 +13,6 @@ define([
     },
     reset: function() {
       self.clear();
-      self.write(lang.ui.get("MESSAGE_DEFAULT"));
     }
   }
 
