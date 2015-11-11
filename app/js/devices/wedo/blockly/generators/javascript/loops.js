@@ -4,7 +4,7 @@ define(["../javascript"],function(generators){
     var statements_block = generators.statementToCode(block, 'block');
     var code = 'while(true){\n';
     code += generators.getInnerStepCode(block);
-    code += ' ' + statements_block + '}';
+    code += ' ' + statements_block;
     code += generators.getInnerStepCode(block);
     code += '}'
     return generators.wrap(block, code);
