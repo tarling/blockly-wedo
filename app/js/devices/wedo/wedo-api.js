@@ -15,10 +15,8 @@ define([
       reset: function() {
         usb.resetAll();
       },
-      get: function(letter) {
-        var value = usb.getSensorAt(letter);
-        console.log("get", letter, value);
-        return value;
+      get: function(slot) {
+        return usb.getSensorAt(slot);
       },
       set: function(output, state) {
         if (state)
@@ -29,23 +27,14 @@ define([
           usb.motorOff(output, offMode);
         }
       },
-      setAt: function(output, slot, state) {
-        var name = outputName(output, slot);
-        if (state)
-        {
-          usb.motorOn(name);
-        } else {
-          var offMode = "off" ;//parts[2]; TODO only when motor off block includes menu for off/brake
-          usb.motorOff(name, offMode);
-        }
+      setAt: function(slot, state) {
+        usb.setAt(slot, state);
       },
-      power: function(output, slot, value) {
-        var name = outputName(output, slot);
-        usb.motorPower(name, parseFloat(value));
+      power: function(slot, value) {
+        usb.powerAt(slot, parseFloat(value));
       },
-      direction: function(output, slot, value) {
-        var name = outputName(output, slot);
-        usb.motorDirection(name, value);
+      direction: function(slot, value) {
+        usb.directionAt(slot, value);
       }
     }
   }

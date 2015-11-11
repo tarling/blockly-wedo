@@ -129,6 +129,12 @@ define([
     return handler.connections[i[0]];
   }
 
+  function getDeviceAt(slotName) {
+    var conn = getDataFor(slotName);
+    var index = INDEX_LOOK_UP[slotName][1];
+    return {conn:conn, index:index}
+  }
+
 
   // WeDo (power functions) ID values
   // Source: https://github.com/ev3dev/lego-linux-drivers/tree/master/wedo
@@ -332,6 +338,25 @@ define([
       outputs.direction(device.conn, device.index, dir);
     });
   }
+
+  self.setAt = function(slotName, state) {
+    var device = getDeviceAt(slotName);
+    outputs.deviceOnOff(device.conn, device.index, state, false);
+  }
+
+  self.powerAt = function(slotName, power) {
+    var device = getDeviceAt(slotName);
+    outputs.power(device.conn, device.index, power);
+
+    self.setAt(slotName, power != 0);
+  }
+
+  self.directionAt = function(slotName, dir) {
+    var device = getDeviceAt(slotName);
+    outputs.direction(device.conn, device.index, dir);
+  }
+
+
 
   self.polled = new Signal();
 
