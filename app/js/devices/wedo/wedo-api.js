@@ -6,6 +6,10 @@ define([
   , names
 ){
 
+  function outputName(type, slot) {
+    return type + " " + slot;
+  }
+
   var api = {
     wedo: {
       reset: function() {
@@ -25,11 +29,23 @@ define([
           usb.motorOff(output, offMode);
         }
       },
-      power: function(output, value) {
-        usb.motorPower(output, parseFloat(value));
+      setAt: function(output, slot, state) {
+        var name = outputName(output, slot);
+        if (state)
+        {
+          usb.motorOn(name);
+        } else {
+          var offMode = "off" ;//parts[2]; TODO only when motor off block includes menu for off/brake
+          usb.motorOff(name, offMode);
+        }
       },
-      direction: function(output, value) {
-        usb.motorDirection(output, value);
+      power: function(output, slot, value) {
+        var name = outputName(output, slot);
+        usb.motorPower(name, parseFloat(value));
+      },
+      direction: function(output, slot, value) {
+        var name = outputName(output, slot);
+        usb.motorDirection(name, value);
       }
     }
   }

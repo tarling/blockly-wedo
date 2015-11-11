@@ -11,16 +11,6 @@ define([
   var TYPES = constants.types;
   var comps = constants.comparisons;
 
-  function getChar(index) {
-    return String.fromCharCode(65+index);
-  }
-
-  var sensorList = [];
-  for (var i = 0; i < 26; i++) {
-    var ch = getChar(i);
-    sensorList.push([ch, ch]);
-  }
-
   blockDefs["wedo_if"] = {
     init: function() {
       this.appendDummyInput()
@@ -69,7 +59,7 @@ define([
     init: function() {
       this.appendDummyInput()
           .appendField(lang.blocks.get("SENSOR"))
-          .appendField(new Blockly.FieldDropdown(sensorList), "sensor");
+          .appendField(new Blockly.FieldDropdown(constants.letterList), "sensor");
       this.setOutput(true, TYPES.SENSOR);
       this.setColour(constants.colors.input);
     }

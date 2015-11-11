@@ -24,23 +24,17 @@ define([
   - tilt
   */
 
-  var motors, outputs, directions;
+  var outputs, directions;
 
   var inited = false;
   function initMsg() {
     if (inited) return;
-    motors = [
+    //motor/all motors/lights/everything
+    outputs = [
       //[label, ID]
       [lang.blocks.get("MOTOR"), "motor"],
-      [lang.blocks.get("ALL-MOTORS"), "all-motors"]
-    ]
-
-    //motor/all motors/lights/everything
-    outputs = motors.concat([
-      //[label, ID]
-      [lang.blocks.get("LIGHTS"), "lights"],
-      [lang.blocks.get("EVERYTHING"), "everything"]
-    ]);
+      [lang.blocks.get("LIGHTS"), "lights"]
+    ];
 
     directions = [
       [lang.blocks.get("THIS-WAY"), names.THIS_WAY],
@@ -57,6 +51,7 @@ define([
       this.appendDummyInput()
           .appendField(lang.blocks.get("TURN"))
           .appendField(new Blockly.FieldDropdown(outputs), "type")
+          .appendField(new Blockly.FieldDropdown(constants.letterList), "slot")
           .appendField(lang.blocks.get("ON"));
       this.setColour(constants.colors.output);
       this.setPreviousStatement(true);
@@ -71,6 +66,7 @@ define([
       this.appendDummyInput()
           .appendField(lang.blocks.get("TURN"))
           .appendField(new Blockly.FieldDropdown(outputs), "type")
+          .appendField(new Blockly.FieldDropdown(constants.letterList), "slot")
           .appendField(lang.blocks.get("OFF"));
       this.setColour(constants.colors.output);
       this.setPreviousStatement(true);
@@ -85,6 +81,7 @@ define([
       this.appendDummyInput()
           .appendField(lang.blocks.get("TURN"))
           .appendField(new Blockly.FieldDropdown(outputs), "type")
+          .appendField(new Blockly.FieldDropdown(constants.letterList), "slot")
           .appendField(lang.blocks.get("ON-FOR"));
       this.appendValueInput("time")
           .setCheck([TYPES.NUMBER, TYPES.VARIABLE]);
@@ -104,6 +101,7 @@ define([
       this.appendDummyInput()
           .appendField(lang.blocks.get("SET"))
           .appendField(new Blockly.FieldDropdown(outputs), "type")
+          .appendField(new Blockly.FieldDropdown(constants.letterList), "slot")
           .appendField(lang.blocks.get("POWER-TO"));
       this.appendValueInput("power")
           .setCheck([TYPES.NUMBER, TYPES.VARIABLE]);
@@ -118,8 +116,8 @@ define([
   blockDefs['wedo_motor_direction'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField(lang.blocks.get("SET"))
-          .appendField(new Blockly.FieldDropdown(motors), "type")
+          .appendField(lang.blocks.get("SET-MOTOR"))
+          .appendField(new Blockly.FieldDropdown(constants.letterList), "slot")
           .appendField(lang.blocks.get("DIRECTION-TO"))
           .appendField(new Blockly.FieldDropdown(directions), "direction");
       this.setColour(constants.colors.output);

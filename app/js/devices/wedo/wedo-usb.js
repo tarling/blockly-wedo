@@ -218,15 +218,18 @@ define([
       var l = name.split(" ")[1];
       var slot = getSlotFor(l);
 
-      var doLight = name.indexOf("light") == 0;
-      var doMotor = name.indexOf("motor") == 0;
-
-      var conn = getDataFor(l);
-      var index = INDEX_LOOK_UP[l][1];
-
-      if ((doMotor && isMotor(slot.type)) || (doLight && isLight(slot.type)))
+      if (slot)
       {
-        list.push({conn:conn, index:index});
+        var doLight = name.indexOf("light") == 0;
+        var doMotor = name.indexOf("motor") == 0;
+
+        var conn = getDataFor(l);
+        var index = INDEX_LOOK_UP[l][1];
+
+        if ((doMotor && isMotor(slot.type)) || (doLight && isLight(slot.type)))
+        {
+          list.push({conn:conn, index:index});
+        }
       }
 
     } else {

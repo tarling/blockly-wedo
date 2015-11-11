@@ -10,6 +10,7 @@
   "TIMES": "times",
   "REPEAT-UNTIL": "repeat until",
   "SET": "set",
+  "SET-MOTOR": "set motor",
   "TO": "to",
   "TO-RANDOM": "to random",
   "INC": "inc",

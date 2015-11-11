@@ -1,6 +1,17 @@
 define(function(){
 
+  function getChar(index) {
+    return String.fromCharCode(65+index);
+  }
+
+  var letterList = [];
+  for (var i = 0; i < 26; i++) {
+    var ch = getChar(i);
+    letterList.push([ch, ch]);
+  }
+
   return {
+    letterList: letterList,
     types: {
       SENSOR: "Sensor",
       NUMBER: "Number",
