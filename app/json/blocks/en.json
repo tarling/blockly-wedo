@@ -24,8 +24,7 @@
   "POWER-TO": "power to",
   "DIRECTION-TO": "direction to",
 
-  "TILT": "tilt",
-  "MOTION": "distance",
+  "SENSOR": "sensor",
   "MOTOR": "motor",
   "ALL-MOTORS": "all motors",
   "LIGHTS": "lights",

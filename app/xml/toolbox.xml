@@ -28,7 +28,7 @@
         <field name="comp">==</field>
         <value name="input">
           <block type="sensor">
-            <field name="sensor">DISTANCE</field>
+            <field name="sensor">A</field>
           </block>
         </value>
         <value name="value">
@@ -41,7 +41,7 @@
         <field name="comp">==</field>
         <value name="input">
           <block type="sensor">
-            <field name="sensor">DISTANCE</field>
+            <field name="sensor">A</field>
           </block>
         </value>
         <value name="value">
@@ -64,7 +64,7 @@
         <field name="comp">==</field>
         <value name="input">
           <block type="sensor">
-            <field name="sensor">DISTANCE</field>
+            <field name="sensor">A</field>
           </block>
         </value>
         <value name="value">
@@ -87,7 +87,7 @@
         <field name="comp">==</field>
         <value name="value1">
           <block type="sensor">
-            <field name="sensor">TILT</field>
+            <field name="sensor">A</field>
           </block>
         </value>
         <value name="value2">

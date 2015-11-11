@@ -11,8 +11,10 @@ define([
       reset: function() {
         usb.resetAll();
       },
-      get: function(sensor) {
-        return usb.getSensor(sensor);
+      get: function(letter) {
+        var value = usb.getSensorAt(letter);
+        console.log("get", letter, value);
+        return value;
       },
       set: function(output, state) {
         if (state)

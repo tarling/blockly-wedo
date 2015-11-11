@@ -11,20 +11,14 @@ define([
   var TYPES = constants.types;
   var comps = constants.comparisons;
 
-  var tiltDirections;
+  function getChar(index) {
+    return String.fromCharCode(65+index);
+  }
 
-  var inited = false;
-  function initMsg() {
-    if (inited) return;
-    tiltDirections = [
-      //[label, ID]
-      [lang.blocks.get("UP"), "3"],
-      [lang.blocks.get("DOWN"), "1"],
-      [lang.blocks.get("LEFT"), "4"],
-      [lang.blocks.get("RIGHT"), "2"],
-      [lang.blocks.get("LEVEL"), "0"]
-    ]
-    inited = true;
+  var sensorList = [];
+  for (var i = 0; i < 26; i++) {
+    var ch = getChar(i);
+    sensorList.push([ch, ch]);
   }
 
   blockDefs["wedo_if"] = {
@@ -74,7 +68,8 @@ define([
   blockDefs['sensor'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField(new Blockly.FieldDropdown([[lang.blocks.get("TILT"), names.TILT], [lang.blocks.get("MOTION"), names.MOTION]]), "sensor");
+          .appendField(lang.blocks.get("SENSOR"))
+          .appendField(new Blockly.FieldDropdown(sensorList), "sensor");
       this.setOutput(true, TYPES.SENSOR);
       this.setColour(constants.colors.input);
     }
