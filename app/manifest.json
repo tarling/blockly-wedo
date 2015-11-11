@@ -9,13 +9,8 @@
     }
   },
   "icons": { "16": "res/brick-16.png", "24": "res/brick-24.png", "128": "res/brick-128.png" },
-  "sockets": {
-    "tcpServer": { "listen" : [":17301", ":17307"] }
-  },
   "permissions": [
-    "app.window.alwaysOnTop",
     "hid",
-    "serial",
     "storage",
     {
       "fileSystem": [
@@ -25,7 +20,6 @@
     {
 			"usbDevices": [
 				{ "vendorId": 1684, "productId": 3 }
-				,{ "vendorId": 1240, "productId": 63 }
  			]
 		}
   ]
