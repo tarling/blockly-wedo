@@ -6,20 +6,18 @@
       <block type="wedo_turn_on"></block>
       <block type="wedo_turn_off"></block>
       <block type="wedo_turn_on_for">
-        <field name="type">motor</field>
-          <value name="time">
-            <block type="number">
-              <field name="value">2</field>
-            </block>
-          </value>
+        <value name="time">
+          <block type="number">
+            <field name="value">2</field>
+          </block>
+        </value>
       </block>
       <block type="wedo_power">
-        <field name="type">motor</field>
-          <value name="power">
-            <block type="number" id="17">
-              <field name="value">50</field>
-            </block>
-          </value>
+        <value name="power">
+          <block type="number" id="17">
+            <field name="value">50</field>
+          </block>
+        </value>
       </block>
       <block type="wedo_motor_direction"></block>
     </category>

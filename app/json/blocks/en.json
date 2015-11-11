@@ -22,8 +22,8 @@
   "ON": "on",
   "OFF": "off",
   "ON-FOR": "on for",
-  "POWER-TO": "power to",
-  "DIRECTION-TO": "direction to",
+  "SET-POWER": "set power of ",
+  "SET-DIRECTION": "set direction of",
 
   "SENSOR": "sensor",
   "MOTOR": "motor",

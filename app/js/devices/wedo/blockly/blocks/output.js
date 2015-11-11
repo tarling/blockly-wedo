@@ -50,7 +50,6 @@ define([
       initMsg();
       this.appendDummyInput()
           .appendField(lang.blocks.get("TURN"))
-          .appendField(new Blockly.FieldDropdown(outputs), "type")
           .appendField(new Blockly.FieldDropdown(constants.letterList), "slot")
           .appendField(lang.blocks.get("ON"));
       this.setColour(constants.colors.output);
@@ -65,7 +64,6 @@ define([
       initMsg();
       this.appendDummyInput()
           .appendField(lang.blocks.get("TURN"))
-          .appendField(new Blockly.FieldDropdown(outputs), "type")
           .appendField(new Blockly.FieldDropdown(constants.letterList), "slot")
           .appendField(lang.blocks.get("OFF"));
       this.setColour(constants.colors.output);
@@ -80,7 +78,6 @@ define([
       initMsg();
       this.appendDummyInput()
           .appendField(lang.blocks.get("TURN"))
-          .appendField(new Blockly.FieldDropdown(outputs), "type")
           .appendField(new Blockly.FieldDropdown(constants.letterList), "slot")
           .appendField(lang.blocks.get("ON-FOR"));
       this.appendValueInput("time")
@@ -99,10 +96,9 @@ define([
     init: function() {
       initMsg();
       this.appendDummyInput()
-          .appendField(lang.blocks.get("SET"))
-          .appendField(new Blockly.FieldDropdown(outputs), "type")
+          .appendField(lang.blocks.get("SET-POWER"))
           .appendField(new Blockly.FieldDropdown(constants.letterList), "slot")
-          .appendField(lang.blocks.get("POWER-TO"));
+          .appendField(lang.blocks.get("TO"))
       this.appendValueInput("power")
           .setCheck([TYPES.NUMBER, TYPES.VARIABLE]);
       this.setColour(constants.colors.output);
@@ -116,9 +112,9 @@ define([
   blockDefs['wedo_motor_direction'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField(lang.blocks.get("SET-MOTOR"))
+          .appendField(lang.blocks.get("SET-DIRECTION"))
           .appendField(new Blockly.FieldDropdown(constants.letterList), "slot")
-          .appendField(lang.blocks.get("DIRECTION-TO"))
+          .appendField(lang.blocks.get("TO"))
           .appendField(new Blockly.FieldDropdown(directions), "direction");
       this.setColour(constants.colors.output);
       this.setPreviousStatement(true);
