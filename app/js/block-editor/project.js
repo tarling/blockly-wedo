@@ -131,6 +131,7 @@ define([
   {
     exampleXml = exampleXml_;
 
+    Blockly.BlockSvg.START_HAT = true
     Blockly.inject(
       $('#content-blocks')
       .get(0),

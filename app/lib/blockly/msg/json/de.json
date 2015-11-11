@@ -4,7 +4,8 @@
 			"Metalhead64",
 			"M165437",
 			"Dan-yell",
-			"아라"
+			"아라",
+			"Octycs"
 		]
 	},
 	"VARIABLES_DEFAULT_NAME": "Element",
@@ -16,6 +17,7 @@
 	"INLINE_INPUTS": "interne Eingänge",
 	"DELETE_BLOCK": "Block löschen",
 	"DELETE_X_BLOCKS": "Block %1 löschen",
+	"CLEAN_UP": "Blöcke aufräumen",
 	"COLLAPSE_BLOCK": "Block zusammenfalten",
 	"COLLAPSE_ALL": "Alle Blöcke zusammenfalten",
 	"EXPAND_BLOCK": "Block entfalten",
@@ -32,7 +34,7 @@
 	"RENAME_VARIABLE": "Variable umbenennen...",
 	"RENAME_VARIABLE_TITLE": "Alle \"%1\" Variablen umbenennen in:",
 	"COLOUR_PICKER_HELPURL": "https://de.wikipedia.org/wiki/Farbe",
-	"COLOUR_PICKER_TOOLTIP": "Wählen eine Farbe von der Palette.",
+	"COLOUR_PICKER_TOOLTIP": "Wähle eine Farbe aus der Palette.",
 	"COLOUR_RANDOM_TITLE": "zufällige Farbe",
 	"COLOUR_RANDOM_TOOLTIP": "Wähle eine Farbe nach dem Zufallsprinzip.",
 	"COLOUR_RGB_HELPURL": "https://de.wikipedia.org/wiki/RGB-Farbraum",
@@ -247,7 +249,7 @@
 	"LISTS_INDEX_OF_HELPURL": "http://publib.boulder.ibm.com/infocenter/lnxpcomp/v8v101/index.jsp?topic=%2Fcom.ibm.xlcpp8l.doc%2Flanguage%2Fref%2Farsubex.htm",
 	"LISTS_INDEX_OF_FIRST": "suche erstes Auftreten von",
 	"LISTS_INDEX_OF_LAST": "suche letztes Auftreten von",
-	"LISTS_INDEX_OF_TOOLTIP": "Sucht die Position (index) eines Elementes in der Liste. Gibt 0 zurück wenn nichts gefunden wurde.",
+	"LISTS_INDEX_OF_TOOLTIP": "Sucht die Position (index) eines Elementes in der Liste. Gibt 0 zurück, falls kein Element gefunden wurde.",
 	"LISTS_GET_INDEX_GET": "nimm",
 	"LISTS_GET_INDEX_GET_REMOVE": "nimm und entferne",
 	"LISTS_GET_INDEX_REMOVE": "entferne",

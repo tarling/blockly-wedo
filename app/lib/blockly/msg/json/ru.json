@@ -3,7 +3,8 @@
 		"authors": [
 			"Espertus",
 			"MS",
-			"Okras"
+			"Okras",
+			"RedFox"
 		]
 	},
 	"VARIABLES_DEFAULT_NAME": "элемент",
@@ -15,6 +16,7 @@
 	"INLINE_INPUTS": "Вставки внутри",
 	"DELETE_BLOCK": "Удалить блок",
 	"DELETE_X_BLOCKS": "Удалить %1 блоков",
+	"CLEAN_UP": "Убрать блоки",
 	"COLLAPSE_BLOCK": "Свернуть блок",
 	"COLLAPSE_ALL": "Свернуть блоки",
 	"EXPAND_BLOCK": "Развернуть блок",
@@ -47,7 +49,7 @@
 	"CONTROLS_REPEAT_HELPURL": "https://ru.wikipedia.org/wiki/Цикл_(программирование)",
 	"CONTROLS_REPEAT_TITLE": "повторить %1 раз",
 	"CONTROLS_REPEAT_INPUT_DO": "выполнить",
-	"CONTROLS_REPEAT_TOOLTIP": "Выполняет команды несколько раз.",
+	"CONTROLS_REPEAT_TOOLTIP": "Выполняет некоторые команды несколько раз.",
 	"CONTROLS_WHILEUNTIL_OPERATOR_WHILE": "повторять, пока",
 	"CONTROLS_WHILEUNTIL_OPERATOR_UNTIL": "повторять, пока не",
 	"CONTROLS_WHILEUNTIL_TOOLTIP_WHILE": "Пока значение истинно, выполняет команды.",
@@ -229,7 +231,7 @@
 	"LISTS_INLIST": "в списке",
 	"LISTS_INDEX_OF_FIRST": "найти первое вхождение элемента",
 	"LISTS_INDEX_OF_LAST": "найти последнее вхождение элемента",
-	"LISTS_INDEX_OF_TOOLTIP": "Возвращает номер позиции первого/последнего вхождения элемента в списке.  Возвращает 0, если текст не найден.",
+	"LISTS_INDEX_OF_TOOLTIP": "Возвращает номер позиции первого/последнего вхождения элемента в списке. Возвращает 0, если элемент не найден.",
 	"LISTS_GET_INDEX_GET": "взять",
 	"LISTS_GET_INDEX_GET_REMOVE": "взять и удалить",
 	"LISTS_GET_INDEX_REMOVE": "удалить",
