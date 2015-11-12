@@ -18,11 +18,9 @@ define([
   var highlitBlocks;
 
   function hardReset() {
-    project.lock(false);
     runner.reset();
-    controls.reset();
-    projectUtils.clearHighlight();
-    Blockly.mainWorkspace.traceOn(false);
+
+
   }
 
   runner.complete.add(hardReset);
@@ -57,7 +55,12 @@ define([
     hardReset()
   });
 
-  runner.resetted.add(hardReset);
+  runner.resetted.add(function(){
+    project.lock(false);
+    controls.reset();
+    projectUtils.clearHighlight();
+    Blockly.mainWorkspace.traceOn(false);
+  });
 
   events.inited.addOnce(function(){
     controls.reset();
