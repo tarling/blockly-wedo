@@ -125,6 +125,7 @@
       <block type="sensor"></block>
     </category>
     <category id="cat07" name="Computer">
+      <block type="log_clear"></block>
       <block type="log">
       <value name="value">
           <block type="string">
@@ -132,6 +133,19 @@
           </block>
         </value>
       </block>
-      <block type="log_clear"></block>
+      <block type="log">
+        <value name="value">
+          <block type="variable">
+            <field name="var">varA</field>
+          </block>
+        </value>
+      </block>
+      <block type="log">
+        <value name="value">
+          <block type="sensor">
+            <field name="sensor">A</field>
+          </block>
+        </value>
+      </block>
     </category>
   </xml>
