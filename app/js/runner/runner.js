@@ -8,7 +8,6 @@ define([
   ,"./api/api"
   ,"./api/when"
   ,"./api/wait"
-  ,"./range-parser"
   ,"./js-transforms"
   ,"./tasks"
 ],function(
@@ -21,11 +20,9 @@ define([
   , api
   , when
   , wait
-  , rangeParser
   , jsTransforms
   , tasks){
 
-  var jsRangeLookup;
   var stepTimeoutID;
   var intervalMs;
   var simPaused = false;
@@ -107,7 +104,7 @@ define([
   }
 
   function highlightBlock(id) {
-    self.blockHighlit.dispatch(id, jsRangeLookup[id]);
+    self.blockHighlit.dispatch(id);
     pause();
   }
 
@@ -117,18 +114,7 @@ define([
   }
 
   function blocklyPreStep(id) {
-    var task = tasks.active();
-    var openIds = task.openIds;
-    if (openIds.length > 0)
-    {
-      var parentId = openIds[openIds.length - 1];
-      var active = jsRangeLookup[id];
-      if (active.prev != task.lastClosed)
-      {
-        highlightBlock(parentId);
-      }
-    }
-    openIds.push(id);
+    highlightBlock(id);
   }
 
   function blocklyInnerStep(id) {
@@ -137,20 +123,7 @@ define([
   }
 
   function blocklyPostStep(id) {
-    var task = tasks.active();
-    var lastClosed = task.lastClosed;
-    task.lastClosed = id;
-    task.openIds.pop();
-    if (lastClosed != undefined)
-    {
-      var range = jsRangeLookup[id];
-      if (range.children.indexOf(lastClosed + "")!=-1)
-      {
-        //previous lastClosed is a child of this block
-        return;
-      }
-    }
-    highlightBlock(id);
+
   }
 
   function blocklyWarning(id){
@@ -169,8 +142,7 @@ define([
     //parse JS
     var js = jsGenerator.workspaceToCode(true);
     console.log("js", js)
-    jsRangeLookup = rangeParser(jsTransforms.forRangeParser(js));
-
+    
     tasks.setup(js, mapAPI());
 
     self.parsed.dispatch();
