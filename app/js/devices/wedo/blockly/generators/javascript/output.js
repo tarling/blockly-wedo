@@ -14,7 +14,9 @@ define(["../javascript"],function(generators){
     var dropdown_slot = block.getFieldValue('slot');
     var text_time = generators.valueToCode(block, 'time', generators.ORDER_ATOMIC);
     var code = 'wedo.setAt(\'' + dropdown_slot + '\', true);\n';
+    code += generators.getInnerStepCode(block);
     code += 'wait.for(' + text_time + ');\n';
+    code += generators.getInnerStepCode(block);
     code += 'wedo.setAt(\'' + dropdown_slot + '\', false)'
     return generators.wrap(block, code);
   };
