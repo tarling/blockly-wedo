@@ -25,6 +25,9 @@
   "SET-POWER": "set power of ",
   "SET-DIRECTION": "set direction of",
 
+  "STR_LEFT_QUOTE":"\u201C",
+  "STR_RIGHT_QUOTE":"\u201D",
+
   "SENSOR": "sensor",
   "MOTOR": "motor",
   "ALL-MOTORS": "all motors",

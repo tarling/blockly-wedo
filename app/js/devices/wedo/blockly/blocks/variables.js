@@ -121,7 +121,9 @@ define([
   blockDefs['string'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField(new Blockly.FieldTextInput("text"), "value");
+          .appendField(lang.blocks.get("STR_LEFT_QUOTE"))
+          .appendField(new Blockly.FieldTextInput("text"), "value")
+          .appendField(lang.blocks.get("STR_RIGHT_QUOTE"));
       this.setInputsInline(true);
       this.setOutput(true, TYPES.STRING);
       this.setColour(constants.colors.variables);
