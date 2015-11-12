@@ -2,7 +2,7 @@ Blockly for WeDo
 =
 A [Blockly](https://developers.google.com/blockly/) editor Chrome App for controlling Lego WeDo devices. It should support up to 13 WeDo devices.
 
-This is produced in conjunction with [Revolution Education](http://www.rev-ed.co.uk/) and uses code from two of their products, the [S2Bot 4 Scratch Chrome App](https://chrome.google.com/webstore/detail/s2bot-4-scratch/pllkalmkifgmanfoghenhgafbcpbicdj), and the [PICAXE Blockly Chrome App](https://chrome.google.com/webstore/detail/picaxe-blockly/hhdlapnjifkkcpghcapopejopnbpapnb)
+This is produced in conjunction with [Revolution Education](http://www.rev-ed.co.uk/) and uses code originally written for two of their products, the [S2Bot 4 Scratch Chrome App](https://chrome.google.com/webstore/detail/s2bot-4-scratch/pllkalmkifgmanfoghenhgafbcpbicdj), and the [PICAXE Blockly Chrome App](https://chrome.google.com/webstore/detail/picaxe-blockly/hhdlapnjifkkcpghcapopejopnbpapnb)
 
 Install
 -
