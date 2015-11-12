@@ -16,11 +16,11 @@ define([
       this.appendDummyInput()
           .appendField(lang.blocks.get("IF"));
       this.appendValueInput("input")
-          .setCheck([TYPES.NUMBER, TYPES.SENSOR]);
+          .setCheck([TYPES.VARIABLE, TYPES.SENSOR]);
       this.appendDummyInput()
           .appendField(new Blockly.FieldDropdown(comps), "comp");
       this.appendValueInput("value")
-          .setCheck([TYPES.NUMBER, TYPES.VARIABLE]);
+          .setCheck([TYPES.NUMBER, TYPES.VARIABLE, TYPES.SENSOR]);
       this.appendStatementInput("block");
       this.setColour(constants.colors.flow);
       this.setInputsInline(true);
@@ -36,11 +36,11 @@ define([
       this.appendDummyInput()
           .appendField(lang.blocks.get("IF"));
       this.appendValueInput("input")
-          .setCheck([TYPES.NUMBER, TYPES.SENSOR]);
+          .setCheck([TYPES.VARIABLE, TYPES.SENSOR]);
       this.appendDummyInput()
           .appendField(new Blockly.FieldDropdown(comps), "comp");
       this.appendValueInput("value")
-          .setCheck([TYPES.NUMBER, TYPES.VARIABLE]);
+          .setCheck([TYPES.NUMBER, TYPES.VARIABLE, TYPES.SENSOR]);
       this.appendStatementInput("trueblock");
       this.appendDummyInput()
           .appendField(lang.blocks.get("ELSE"));
