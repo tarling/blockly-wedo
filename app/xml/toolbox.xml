@@ -48,7 +48,20 @@
           </block>
         </value>
       </block>
-      <block type="sensor"></block>
+      <block type="wedo_if_tilt">
+        <value name="input">
+          <block type="sensor">
+            <field name="sensor">A</field>
+          </block>
+        </value>
+      </block>
+      <block type="wedo_if_tilt_else">
+        <value name="input">
+          <block type="sensor">
+            <field name="sensor">A</field>
+          </block>
+        </value>
+      </block>
     </category>
     <category id="cat04" name="Delays">
       <block type="wait">
@@ -71,6 +84,13 @@
           </block>
         </value>
       </block>
+      <block type="wait_until_tilt">
+        <value name="input">
+          <block type="sensor">
+            <field name="sensor">A</field>
+          </block>
+        </value>
+      </block>
     </category>
     <category id="cat05" name="Loops">
       <block type="repeat"></block>
@@ -83,14 +103,21 @@
       </block>
       <block type="repeat_until">
         <field name="comp">==</field>
-        <value name="value1">
+        <value name="input">
           <block type="sensor">
             <field name="sensor">A</field>
           </block>
         </value>
-        <value name="value2">
+        <value name="value">
           <block type="number">
             <field name="value">50</field>
+          </block>
+        </value>
+      </block>
+      <block type="repeat_until_tilt">
+        <value name="input">
+          <block type="sensor">
+            <field name="sensor">A</field>
           </block>
         </value>
       </block>

@@ -7,7 +7,8 @@ define([
   var blockDefs = window.Blockly.Blocks;
   var TYPES = constants.types;
   var comps = constants.comparisons;
-
+  var tilts = constants.tilts;
+  
   blockDefs['repeat'] = {
     init: function() {
       this.appendDummyInput()
@@ -41,12 +42,30 @@ define([
     init: function() {
       this.appendDummyInput()
           .appendField(lang.blocks.get("REPEAT-UNTIL"));
-      this.appendValueInput("value1")
+      this.appendValueInput("input")
           .setCheck([TYPES.NUMBER, TYPES.SENSOR, TYPES.VARIABLE]);
       this.appendDummyInput()
           .appendField(new Blockly.FieldDropdown(comps), "comp");
-      this.appendValueInput("value2")
+      this.appendValueInput("value")
           .setCheck([TYPES.NUMBER, TYPES.SENSOR, TYPES.VARIABLE]);
+      this.appendStatementInput("block");
+      this.setInputsInline(true);
+      this.setPreviousStatement(true);
+      this.setNextStatement(true);
+      this.setColour(constants.colors.loops);
+      blockUtils.setupBlock(this);
+    }
+  };
+
+  blockDefs['repeat_until_tilt'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField(lang.blocks.get("REPEAT-UNTIL"));
+      this.appendValueInput("input")
+          .setCheck([TYPES.SENSOR]);
+      this.appendDummyInput()
+          .appendField(lang.blocks.get("TILTS"))    
+          .appendField(new Blockly.FieldDropdown(tilts), "value");
       this.appendStatementInput("block");
       this.setInputsInline(true);
       this.setPreviousStatement(true);

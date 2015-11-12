@@ -20,6 +20,7 @@ define(function(){
       TILT: "Tilt"
     },
     comparisons: [["=", "=="], [">", ">"], ["<", "<"], [">=", ">="], ["<=", "<="], ["not =", "!="]],
+    tilts: [["this way", "== 2"], ["that way", "== 4"], ["up", "== 3"], ["down", "== 1"], ["none", "== 0"], ["any way", "> 0"]],
     colors: {
       default: "#bbbbbb",
       start: "#007a29",

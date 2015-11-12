@@ -10,6 +10,7 @@ define([
 
   var TYPES = constants.types;
   var comps = constants.comparisons;
+  var tilts = constants.tilts;
 
   blockDefs["wedo_if"] = {
     init: function() {
@@ -30,6 +31,24 @@ define([
     }
   };
 
+  blockDefs["wedo_if_tilt"] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField(lang.blocks.get("IF"));
+      this.appendValueInput("input")
+          .setCheck([TYPES.SENSOR]);
+      this.appendDummyInput()
+          .appendField(lang.blocks.get("TILTS"));
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldDropdown(tilts), "value");
+      this.appendStatementInput("block");
+      this.setColour(constants.colors.flow);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true);
+      this.setNextStatement(true);
+      blockUtils.setupBlock(this);
+    }
+  };
 
   blockDefs["wedo_if_else"] = {
     init: function() {
@@ -41,6 +60,28 @@ define([
           .appendField(new Blockly.FieldDropdown(comps), "comp");
       this.appendValueInput("value")
           .setCheck([TYPES.NUMBER, TYPES.VARIABLE, TYPES.SENSOR]);
+      this.appendStatementInput("trueblock");
+      this.appendDummyInput()
+          .appendField(lang.blocks.get("ELSE"));
+      this.appendStatementInput("falseblock");
+      this.setColour(constants.colors.flow);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true);
+      this.setNextStatement(true);
+      blockUtils.setupBlock(this);
+    }
+  };
+
+  blockDefs["wedo_if_tilt_else"] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField(lang.blocks.get("IF"));
+      this.appendValueInput("input")
+          .setCheck([TYPES.SENSOR]);
+      this.appendDummyInput()
+          .appendField(lang.blocks.get("TILTS"));
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldDropdown(tilts), "value");
       this.appendStatementInput("trueblock");
       this.appendDummyInput()
           .appendField(lang.blocks.get("ELSE"));

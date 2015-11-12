@@ -23,15 +23,27 @@ define(["../javascript"],function(generators){
   };
 
   generators['repeat_until'] = function(block) {
-    var value_value1 = generators.valueToCode(block, 'value1', generators.ORDER_ATOMIC);
+    var input_value = generators.valueToCode(block, 'input', generators.ORDER_ATOMIC);
     var dropdown_comp = block.getFieldValue('comp');
-    var value_value2 = generators.valueToCode(block, 'value2', generators.ORDER_ATOMIC);
+    var value_value = generators.valueToCode(block, 'value', generators.ORDER_ATOMIC);
     var statements_block = generators.statementToCode(block, 'block');
     var code = 'do{\n';
     code += generators.getInnerStepCode(block);
     code += ' ' + statements_block + ';\n';
     code += generators.getInnerStepCode(block);
-    code += '} while (' + value_value1 + ' ' + dropdown_comp + ' ' + value_value2 + ')';
+    code += '} while (' + input_value + ' ' + dropdown_comp + ' ' + value_value + ')';
+    return generators.wrap(block, code);
+  };
+
+  generators['repeat_until_tilt'] = function(block) {
+    var input_value = generators.valueToCode(block, 'input', generators.ORDER_ATOMIC);
+    var tilt_value = block.getFieldValue('value');
+    var statements_block = generators.statementToCode(block, 'block');
+    var code = 'do{\n';
+    code += generators.getInnerStepCode(block);
+    code += ' ' + statements_block + ';\n';
+    code += generators.getInnerStepCode(block);
+    code += '} while (' + input_value + ' ' + tilt_value + ')';
     return generators.wrap(block, code);
   };
 

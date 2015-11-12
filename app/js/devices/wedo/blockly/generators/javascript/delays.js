@@ -15,4 +15,13 @@ define(["../javascript"],function(generators){
     code += "}"
     return generators.wrap(block, code);
   };
+
+  generators['wait_until_tilt'] = function(block) {
+    var value_input = generators.valueToCode(block, 'input', generators.ORDER_ATOMIC);
+    var tilt_value = block.getFieldValue('value');
+    var code = 'while(!(' + value_input + ' ' + tilt_value + ')){\n';
+    code += generators.getInnerStepCode(block);
+    code += "}"
+    return generators.wrap(block, code);
+  };
 });
