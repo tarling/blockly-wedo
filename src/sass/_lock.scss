@@ -1,0 +1,10 @@
+body.locked {
+  pointer-events: none;
+
+  #device {
+    .controls {
+      pointer-events: initial;
+    }
+  }
+
+}

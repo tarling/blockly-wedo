@@ -5,35 +5,13 @@
 @import "device";
 @import "text-editor";
 @import "tabs";
+@import "lock";
 
 body {
   background-color: #F9F9F9;
   font-family: 'helvetica neue', arial, sans-serif;
 }
 
-.log {
-  font-family: monospace;
-  white-space: pre;
-}
-
-.tab-pane {
-  box-shadow: rgba(34, 25, 25, 0.298039) 0px 2px 3px 0px;
-}
-
-.nav-tabs>li.active>a,
-.nav-tabs>li.active>a:focus,
-.nav-tabs>li.active>a:hover {
-  font-weight: bold;
-}
-
 .modal-content {
     margin-top: 102px;
-}
-
-.tab-pane {
-  padding: 0;
-}
-
-.tab-pane.active {
-  visibility: visible;
 }

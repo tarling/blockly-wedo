@@ -355,17 +355,6 @@ span.glyphicon.glyphicon-lock {
   color: #bbbbbb;
   font-size: 11px; }
 
-#tab-js {
-  display: none; }
-
-body {
-  background-color: #F9F9F9;
-  font-family: 'helvetica neue', arial, sans-serif; }
-
-.log {
-  font-family: monospace;
-  white-space: pre; }
-
 .tab-pane {
   box-shadow: rgba(34, 25, 25, 0.298039) 0px 2px 3px 0px; }
 
@@ -374,11 +363,23 @@ body {
 .nav-tabs > li.active > a:hover {
   font-weight: bold; }
 
-.modal-content {
-  margin-top: 102px; }
-
 .tab-pane {
   padding: 0; }
 
 .tab-pane.active {
   visibility: visible; }
+
+#tab-js {
+  display: none; }
+
+body.locked {
+  pointer-events: none; }
+  body.locked #device .controls {
+    pointer-events: initial; }
+
+body {
+  background-color: #F9F9F9;
+  font-family: 'helvetica neue', arial, sans-serif; }
+
+.modal-content {
+  margin-top: 102px; }

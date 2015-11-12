@@ -14,6 +14,24 @@ span.glyphicon.glyphicon-lock {
   font-size: 11px;
 }
 
+.tab-pane {
+  box-shadow: rgba(34, 25, 25, 0.298039) 0px 2px 3px 0px;
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+  font-weight: bold;
+}
+
+.tab-pane {
+  padding: 0;
+}
+
+.tab-pane.active {
+  visibility: visible;
+}
+
 #tab-js {
   display: none;
 }

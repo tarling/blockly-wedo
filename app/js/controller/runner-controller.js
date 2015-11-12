@@ -4,6 +4,7 @@ define([
   , "../runner/tasks"
   , "../runner/api/message"
   , "../block-editor/project-utils"
+  , "../block-editor/project"
   , "../events"
 ],function(
   runner
@@ -11,14 +12,17 @@ define([
   , tasks
   , message
   , projectUtils
+  , project
   , events
 ){
   var highlitBlocks;
 
   function hardReset() {
-    //project.lock(false);
+    project.lock(false);
     runner.reset();
     controls.reset();
+    projectUtils.clearHighlight();
+    Blockly.mainWorkspace.traceOn(false);
   }
 
   runner.complete.add(hardReset);
@@ -26,6 +30,7 @@ define([
   controls.runClicked.add(function(){
     runner.run();
     message.reset();
+    project.lock(true);
   });
 
   controls.resetClicked.add(function(){
@@ -52,10 +57,7 @@ define([
     hardReset()
   });
 
-  runner.resetted.add(function(){
-    projectUtils.clearHighlight();
-    Blockly.mainWorkspace.traceOn(false);
-  });
+  runner.resetted.add(hardReset);
 
   events.inited.addOnce(function(){
     controls.reset();
