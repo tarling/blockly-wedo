@@ -11,7 +11,6 @@ define([
    vendorId: 0x0694,
    productId: 0x0003
   };
-  var BUSY = "";
 
   var lastReportStr;
 
@@ -283,10 +282,6 @@ define([
     return (slot && isSensor(slot.type)) ? slot.value : 0;
   }
 
-  self.getBusy = function() {
-    return BUSY;
-  }
-
   self.reset = function() {
     sensorsByType = {};
   };
@@ -329,10 +324,8 @@ define([
 
   self.motorOnFor = function(name, time, uniqueID) {
     turnDevicesOnOff(name, true);
-    BUSY += " " + uniqueID;
     setTimeout(function() {
       turnDevicesOnOff(name, false);
-      BUSY = BUSY.replace(" " + uniqueID, "");
     }, 1000 * time);
   };
 
