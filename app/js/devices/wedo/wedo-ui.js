@@ -84,7 +84,8 @@ define([
   }
 
   var self = {};
-
+  var TILT_STATES = ["none","down","this way","up","that way"];
+  
   self.updateConnection = function(count) {
     if (count > 0)
     {
@@ -117,12 +118,11 @@ define([
         else
             value = lang.ui.get("DEVICE_OFF");
       }
-      
+
       if (isTilt(type)) {
-        var TILT_STATES = ["none","down","this way","up","that way"];
         value = TILT_STATES[value];
       }
-            
+
       var s = isSensor(type);
       type = type.toLowerCase();
       if (s) type += " " + lang.ui.get("DEVICE_SENSOR");

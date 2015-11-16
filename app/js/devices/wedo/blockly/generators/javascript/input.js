@@ -40,7 +40,7 @@ define(["../javascript"],function(generators){
     var tilt_value = block.getFieldValue('value');
     var statements_trueblock = generators.statementToCode(block, 'trueblock');
     var statements_falseblock = generators.statementToCode(block, 'falseblock');
-    var code = 'if (' + text_sensor + ' ' + text_value + ') {\n';
+    var code = 'if (' + text_sensor + ' ' + tilt_value + ') {\n';
     code += statements_trueblock;
     code += '} else {\n';
     code += statements_falseblock;
