@@ -119,9 +119,12 @@ define([
             value = lang.ui.get("DEVICE_OFF");
       }
 
-      if (isTilt(type)) {
-        value = TILT_STATES[value];
-      }
+      //TODO - commented out as breaks tilt switch operation as value is now a string not number 
+      //we actually want to make the html 'screenvalue' = string but leave 'value' still numeric 
+      //so it can still work with comparisions etc.
+      //if (isTilt(type)) {
+      //  value = TILT_STATES[value];
+      //}
 
       var s = isSensor(type);
       type = type.toLowerCase();
