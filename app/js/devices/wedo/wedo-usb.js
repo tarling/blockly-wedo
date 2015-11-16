@@ -118,6 +118,11 @@ define([
     return type == names.MOTION || type == names.TILT;
   }
 
+  function isSensorAt(letter) {
+    var slot = getSlotFor(letter);
+    return slot && isSensor(slot.type);
+  }
+
   function getSlotFor(letter) {
     var i = INDEX_LOOK_UP[letter];
     var conn = handler.connections[i[0]];
@@ -340,11 +345,15 @@ define([
   }
 
   self.setAt = function(slotName, state) {
+    if (isSensorAt(slotName)) return;
+
     var device = getDeviceAt(slotName);
     outputs.deviceOnOff(device.conn, device.index, state, false);
   }
 
   self.powerAt = function(slotName, power) {
+    if (isSensorAt(slotName)) return;
+
     var device = getDeviceAt(slotName);
     outputs.power(device.conn, device.index, power);
 
@@ -352,6 +361,8 @@ define([
   }
 
   self.directionAt = function(slotName, dir) {
+    if (isSensorAt(slotName)) return;
+
     var device = getDeviceAt(slotName);
     outputs.direction(device.conn, device.index, dir);
   }
