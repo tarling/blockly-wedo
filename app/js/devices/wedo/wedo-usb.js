@@ -114,8 +114,17 @@ define([
     return type == names.LIGHTBRICK;
   }
 
+  function isOutput(type) {
+    return isLight(type) || isMotor(type);
+  }
+
   function isSensor(type) {
     return type == names.MOTION || type == names.TILT;
+  }
+
+  function isOutputAt(letter) {
+    var slot = getSlotFor(letter);
+    return slot && isOutput(slot.type);
   }
 
   function isSensorAt(letter) {
@@ -345,14 +354,14 @@ define([
   }
 
   self.setAt = function(slotName, state) {
-    if (isSensorAt(slotName)) return;
+    if (!isOutputAt(slotName)) return;
 
     var device = getDeviceAt(slotName);
     outputs.deviceOnOff(device.conn, device.index, state, false);
   }
 
   self.powerAt = function(slotName, power) {
-    if (isSensorAt(slotName)) return;
+    if (!isOutputAt(slotName)) return;
 
     var device = getDeviceAt(slotName);
     outputs.power(device.conn, device.index, power);
@@ -361,7 +370,7 @@ define([
   }
 
   self.directionAt = function(slotName, dir) {
-    if (isSensorAt(slotName)) return;
+    if (!isOutputAt(slotName)) return;
 
     var device = getDeviceAt(slotName);
     outputs.direction(device.conn, device.index, dir);
