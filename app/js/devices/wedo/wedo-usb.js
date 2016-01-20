@@ -228,45 +228,53 @@ define([
     }, scope);
   };
 
-  function getDevicesFor(name) {
+ function getDevicesFor(name) {
     var list = [];
-    if (name.indexOf(" ") != -1)
-    {
-      //specifc
-
-      var l = name.split(" ")[1];
-      var slot = getSlotFor(l);
-
-      if (slot)
-      {
-        var doLight = name.indexOf("light") == 0;
-        var doMotor = name.indexOf("motor") == 0;
-
+	var doLight;
+	var doMotor;
+		
+	switch(name) {
+	  case "everything":
+        doLight = true; 
+		doMotor = true;
+		break;
+	  case "lights":
+        doLight = true; 
+		break;		
+      case "motor":
+      case "all motors":
+      case "all%20motors":
+	    doMotor = true; 
+		break;		
+      default:
+		//must be single case if not one of the above
+	  
+	    var l = name.split(" ")[1]; 
+        var slot = getSlotFor(l);
+      
+        doLight = name.indexOf("light") == 0;
+        doMotor = name.indexOf("motor") == 0;
+      
         var conn = getDataFor(l);
         var index = INDEX_LOOK_UP[l][1];
+      
+        if ((doMotor && isMotor(slot.type)) || (doLight && isLight(slot.type)) || (doMotor && isLight(slot.type)))
+        {
+          list.push({conn:conn, index:index});
+        }
+	    return list; //single case, so can return now
+        break;
+    }
 
+	//process multiple options
+    handler.connections.forEach(function(conn){      
+      conn.slots.forEach(function(slot, index){          
         if ((doMotor && isMotor(slot.type)) || (doLight && isLight(slot.type)))
         {
           list.push({conn:conn, index:index});
         }
-      }
-
-    } else {
-
-      //all
-
-      var doLight = name.indexOf("light") != -1 || name == "everything";
-      var doMotor = name.indexOf("motor") != -1  || name == "everything";
-
-      handler.connections.forEach(function(conn){
-        conn.slots.forEach(function(slot, index){
-          if ((doMotor && isMotor(slot.type)) || (doLight && isLight(slot.type)))
-          {
-            list.push({conn:conn, index:index});
-          }
-        });
-      });
-    }
+      });   
+    });
     return list;
   };
 
