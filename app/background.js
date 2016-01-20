@@ -1,6 +1,6 @@
 chrome.app.runtime.onLaunched.addListener(function() {
 
-  var id = "scratch-hardware-helper";
+  var id = "blockly-wedo";
   var appWin;
 
   chrome.app.window.create('main.html', {

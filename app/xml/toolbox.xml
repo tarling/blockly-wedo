@@ -2,7 +2,7 @@
     <!--<category id="cat01" name="Start">
       <block type="when_start_clicked"></block>
     </category>-->
-    <category id="cat02" name="Outputs">
+    <category id="cat02" name="Outputs" colour="#5ba5a5">
       <block type="wedo_turn_on"></block>
       <block type="wedo_turn_off"></block>
       <block type="wedo_turn_on_for">
@@ -21,7 +21,7 @@
       </block>
       <block type="wedo_motor_direction"></block>
     </category>
-    <category id="cat03" name="Sensors">
+    <category id="cat03" name="Sensors" colour="#7c5385">
       <block type="wedo_if">
         <field name="comp">&gt;</field>
         <value name="input">
@@ -63,7 +63,7 @@
         </value>
       </block>
     </category>
-    <category id="cat04" name="Delays">
+    <category id="cat04" name="Delays" colour="#49a6d4">
       <block type="wait">
         <value name="time">
           <block type="number">
@@ -92,7 +92,7 @@
         </value>
       </block>
     </category>
-    <category id="cat05" name="Loops">
+    <category id="cat05" name="Loops" colour="#77ab41">
       <block type="repeat"></block>
       <block type="repeat_count">
         <value name="count">
@@ -122,7 +122,7 @@
         </value>
       </block>
     </category>
-    <category id="cat06" name="Variables">
+    <category id="cat06" name="Variables" colour="#d05f2d">
       <block type="var_set">
         <field name="var">varA</field>
         <value name="value">
@@ -151,7 +151,7 @@
       <block type="number"></block>
       <block type="sensor"></block>
     </category>
-    <category id="cat07" name="Computer">
+    <category id="cat07" name="Computer" colour="#cc0000">
       <block type="log_clear"></block>
       <block type="log">
       <value name="value">
