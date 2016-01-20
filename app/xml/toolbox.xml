@@ -152,6 +152,7 @@
       <block type="sensor"></block>
     </category>
     <category id="cat07" name="Computer" colour="#cc0000">
+      <block type="comment"></block>
       <block type="log_clear"></block>
       <block type="log">
       <value name="value">

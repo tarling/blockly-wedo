@@ -8,6 +8,20 @@ define([
   var TYPES = constants.types;
   var blockDefs = window.Blockly.Blocks;
 
+// ADVANCED : COMMENT [TEXT]
+
+  blockDefs['comment'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldTextInput("comment"), "value")
+      this.setPreviousStatement(false);
+      this.setNextStatement(false);
+      this.setTooltip('');
+      this.setColour(constants.colors.comment);
+      blockUtils.setupBlock(this);
+    }
+  };
+
   blockDefs['log'] = {
     init: function() {
       this.appendDummyInput()

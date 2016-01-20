@@ -30,7 +30,8 @@ define(function(){
       input: "#7c5385",
       flow: "#b32d5e",
       loops: "#77ab41",
-      computer: "#cc0000"
+      computer: "#cc0000",
+      comment: "#fffacd"
     }
   }
 
