@@ -14,7 +14,7 @@ define([
     init: function() {
       this.appendDummyInput()
           .appendField(new Blockly.FieldTextInput("comment"), "value")
-      this.setPreviousStatement(false);
+      this.setPreviousStatement(true);
       this.setNextStatement(false);
       this.setTooltip('');
       this.setColour(constants.colors.comment);
