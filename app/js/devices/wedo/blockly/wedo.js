@@ -6,6 +6,7 @@ define([
   "./blocks/events",
   "./blocks/loops",
   "./blocks/variables",
+  "./blocks/wedo2extras",
   "./generators/javascript",
   "./generators/javascript/input",
   "./generators/javascript/output",
@@ -14,4 +15,5 @@ define([
   "./generators/javascript/events",
   "./generators/javascript/loops",
   "./generators/javascript/variables",
+  "./generators/javascript/wedo2extras",
 ],function(){});

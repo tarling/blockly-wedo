@@ -176,4 +176,16 @@
         </value>
       </block>
     </category>
-  </xml>
+	<!-- <category id="cat08" name="Procedures" custom="PROCEDURE" colour="#7c5385"></category> -->
+    <category id="cat09" name="WeDo 2.0" colour="#808080">
+      <block type="led_colour"></block>
+	  <block type="piezo">
+        <value name="time">
+          <block type="number">
+            <field name="value">100</field>
+          </block>
+        </value>
+      </block>
+      <block type="wait_until_button"></block>
+    </category>
+</xml>
