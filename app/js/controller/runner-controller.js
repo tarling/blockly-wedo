@@ -26,6 +26,7 @@ define([
   runner.complete.add(hardReset);
 
   controls.runClicked.add(function(){
+    runner.setSpeed(0.1);
     runner.run();
     message.reset();
     project.lock(true);
