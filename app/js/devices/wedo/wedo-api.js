@@ -1,9 +1,11 @@
 define([
   "./wedo-usb"
   , "./wedo-names"
+    ,"../../block-editor/block-audio"
 ],function(
   usb
   , names
+  , blocklyAudio
 ){
 
   function outputName(type, slot) {
@@ -37,6 +39,14 @@ define([
       },
       direction: function(slot, value) {
         usb.directionAt(slot, value);
+      },
+      playFile: function(file) {
+        var path = "../../res/MP3/" + file; // + ".mp3";
+        blocklyAudio.stop();
+        blocklyAudio.playFile(path);
+      },
+      playStop: function() {
+        blocklyAudio.stop();
       }
     }
   }

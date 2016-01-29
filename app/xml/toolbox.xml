@@ -156,7 +156,7 @@
       <block type="comment"></block>
       <block type="log_clear"></block>
       <block type="log">
-      <value name="value">
+        <value name="value">
           <block type="string">
             <field name="value">Hello world!</field>
           </block>
@@ -176,6 +176,10 @@
           </block>
         </value>
       </block>
+      <block type="play_file">
+        <field name="value">0001.MP3</field>
+      </block>
+      <block type="play_stop"></block>      
     </category>
 	<!-- <category id="cat08" name="Procedures" custom="PROCEDURE" colour="#7c5385"></category> -->
     <category id="cat09" name="WeDo 2.0" colour="#808080">

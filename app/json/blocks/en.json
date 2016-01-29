@@ -30,6 +30,8 @@
   "SET-LED": "set LED",
   "PLAY": "play",
   "PLAY-NOTE": "play note",
+  "PLAY-FILE": "play file",
+  "PLAY-STOP": "stop playing",
   "OCTAVE": "octave",
   "FOR": "for",
   "ON-WEDO": "on WeDo",

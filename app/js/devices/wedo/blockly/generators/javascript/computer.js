@@ -17,4 +17,16 @@ define(["../javascript"],function(generators){
     return generators.wrap(block, code);
   };
 
+  generators['play_file'] = function(block) {
+    var text_value = block.getFieldValue('value');
+    text_value = text_value.replace(/'/g, "\'")
+    var code = 'wedo.playFile(' + "'" + text_value + "'" + ')';
+    return generators.wrap(block, code);
+  };  
+  
+  generators['play_stop'] = function(block) {
+    var code = 'wedo.playStop()'
+    return generators.wrap(block, code);
+  };  
+  
 });

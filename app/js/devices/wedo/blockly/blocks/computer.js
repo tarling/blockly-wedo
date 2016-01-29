@@ -46,4 +46,25 @@ define([
     }
   };
 
+  blockDefs['play_file'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField(lang.blocks.get("PLAY-FILE"))
+          .appendField(new Blockly.FieldTextInput("0001.MP3"), "value")
+      this.setPreviousStatement(true);
+      this.setNextStatement(true);
+      this.setColour(constants.colors.computer);
+    }
+  };
+  
+  blockDefs['play_stop'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField(lang.blocks.get("PLAY-STOP"));
+      this.setPreviousStatement(true);
+      this.setNextStatement(true);
+      this.setColour(constants.colors.computer);
+    }
+  };
+  
 });
