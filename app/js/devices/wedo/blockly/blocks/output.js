@@ -6,7 +6,6 @@ define([
 ],function(constants, names, blockUtils, lang){
 
   var TYPES = constants.types;
-
   var blockDefs = window.Blockly.Blocks;
 
   /*
@@ -73,6 +72,18 @@ define([
     }
   };
 
+  blockDefs['wedo_everything_off'] = {
+    init: function() {
+      initMsg();
+      this.appendDummyInput()
+          .appendField(lang.blocks.get("TURN-EVERYTHING-OFF"));
+      this.setColour(constants.colors.output);
+      this.setPreviousStatement(true);
+      this.setNextStatement(true);
+      blockUtils.setupBlock(this);
+    }
+  };
+  
   blockDefs['wedo_turn_on_for'] = {
     init: function() {
       initMsg();

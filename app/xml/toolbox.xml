@@ -5,6 +5,7 @@
     <category id="cat02" name="Outputs" colour="#5ba5a5">
       <block type="wedo_turn_on"></block>
       <block type="wedo_turn_off"></block>
+      <block type="wedo_everything_off"></block>
       <block type="wedo_turn_on_for">
         <value name="time">
           <block type="number">
@@ -62,6 +63,7 @@
           </block>
         </value>
       </block>
+      <block type="sensor"></block>
     </category>
     <category id="cat04" name="Delays" colour="#49a6d4">
       <block type="wait">
@@ -149,7 +151,6 @@
       <block type="variable"></block>
       <block type="string"></block>
       <block type="number"></block>
-      <block type="sensor"></block>
     </category>
     <category id="cat07" name="Computer" colour="#cc0000">
       <block type="comment"></block>
