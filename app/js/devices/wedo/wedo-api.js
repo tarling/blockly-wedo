@@ -18,13 +18,15 @@ define([
       get: function(slot) {
         return usb.getSensorAt(slot);
       },
-      set: function(output, state) {
+      set: function(slot, state) {
         if (state)
         {
-          usb.motorOn(output);
+          //usb.motorOn(slot);
+          usb.setOn(slot);
         } else {
-          var offMode = "off" ;//parts[2]; TODO only when motor off block includes menu for off/brake
-          usb.motorOff(output, offMode);
+          //var offMode = "off" ;//parts[2]; TODO only when motor off block includes menu for off/brake
+          //usb.motorOff(slot, offMode);
+          usb.setOff(slot);
         }
       },
       setAt: function(slot, state) {

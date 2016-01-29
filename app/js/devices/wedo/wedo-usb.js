@@ -153,22 +153,22 @@ define([
   // Source: https://github.com/ev3dev/lego-linux-drivers/tree/master/wedo
 
   var ID_LIST = [
-    9, //var WEDO_TYPE_SHORTLO	=   9 ; // (short to 0V, 0) motor active braking also gives value <5
-  	27,//var WEDO_TYPE_BEND	    =  27 ; // (1k5, 16-17)
-  	47,//var WEDO_TYPE_TILT	    =  47 ; // (3k9, 38-39)
-  	67,//var WEDO_TYPE_FUTURE	=  67 ; // (6k8, 58-59)
-  	82,//var WEDO_TYPE_RAW		=  82 ; // (10k, 77-78) CPS changed 87 to 82
-  	92,//var WEDO_TYPE_TOUCH	    =  92 ; // (12k, 86-87) CPS changed 100 to 92
-  	109,//var WEDO_TYPE_SERVO	    = 109 ; // (15k, 99-102)
-  	131,//var WEDO_TYPE_SOUND	    = 131 ; // (22k, 120-121)
-  	152,//var WEDO_TYPE_TEMP	    = 152 ; // (33k, 143-144)
-  	169,//var WEDO_TYPE_LIGHT	    = 169 ; // (47k, 161-162)
-  	190,//var WEDO_TYPE_MOTION	= 190 ; // (68k, 176-179) aka distance
-  	207,//var WEDO_TYPE_LIGHTBRICK =207 ; // (150k, 203-204)aka LEDs CPS changed from 211 to 207
-  	224,//var WEDO_TYPE_22		= 224 ; // (220k, 210-211)
-  	233,//var WEDO_TYPE_OPEN	    = 233 ; // (228-231) no i/o device is connected
-  	246,//var WEDO_TYPE_MOTOR	    = 246 ; // (short via motor coil to sensor pd, 238-240)
-  	255//var WEDO_TYPE_SHORTHI	= 255 ; // (short to V+, 255)
+    9,   //var WEDO_TYPE_SHORTLO    =   9 ; // (short to 0V, 0) motor active braking also gives value <5
+    27,  //var WEDO_TYPE_BEND       =  27 ; // (1k5, 16-17)
+    47,  //var WEDO_TYPE_TILT       =  47 ; // (3k9, 38-39)
+    67,  //var WEDO_TYPE_FUTURE     =  67 ; // (6k8, 58-59)
+    82,  //var WEDO_TYPE_RAW        =  82 ; // (10k, 77-78) CPS changed  87>82
+    92,  //var WEDO_TYPE_TOUCH      =  92 ; // (12k, 86-87) CPS changed 100>92
+    109, //var WEDO_TYPE_SERVO      = 109 ; // (15k, 99-102)
+    131, //var WEDO_TYPE_SOUND      = 131 ; // (22k, 120-121)
+    152, //var WEDO_TYPE_TEMP       = 152 ; // (33k, 143-144)
+    169, //var WEDO_TYPE_LIGHT      = 169 ; // (47k, 161-162)
+    190, //var WEDO_TYPE_MOTION     = 190 ; // (68k, 176-179)  aka distance
+    207, //var WEDO_TYPE_LIGHTBRICK = 207 ; // (150k, 203-204) aka LEDs CPS changed 211>207
+    224, //var WEDO_TYPE_22         = 224 ; // (220k, 210-211)
+    233, //var WEDO_TYPE_OPEN       = 233 ; // (228-231) no i/o device is connected
+    246, //var WEDO_TYPE_MOTOR      = 246 ; // (short via motor coil to sensor pd, 238-240)
+    255  //var WEDO_TYPE_SHORTHI    = 255 ; // (short to V+, 255)
   ].reverse();
 
   var NAME_ID_ORDER = [names.SHORTLO, names.BEND, names.TILT, names.FUTURE, names.RAW, names.TOUCH, names.SERVO, names.SOUND, names.TEMP, names.LIGHT, names.MOTION, names.LIGHTBRICK, names.N_22, names.OPEN, names.MOTOR, names.SHORTHI   ].reverse();
@@ -221,7 +221,7 @@ define([
     return out;
   }
 
-  function turnDevicesOnOff(name, onOff, alreadyBraked) {
+/*   function turnDevicesOnOff(name, onOff, alreadyBraked) {
     var list = getDevicesFor(name);
     list.forEach(function(device) {
       outputs.deviceOnOff(device.conn, device.index, onOff, alreadyBraked);
@@ -230,7 +230,7 @@ define([
 
  function getDevicesFor(name) {
     var list = [];
-	var doLight;
+ 	var doLight;
 	var doMotor;
 		
 	switch(name) {
@@ -264,19 +264,19 @@ define([
         }
 	    return list; //single case, so can return now
         break;
-    }
+    } 
 
 	//process multiple options
     handler.connections.forEach(function(conn){      
       conn.slots.forEach(function(slot, index){          
-        if ((doMotor && isMotor(slot.type)) || (doLight && isLight(slot.type)))
+        if ((doMotor && isMotor(slot.type)) || (doLight && isLight(slot.type)))  
         {
           list.push({conn:conn, index:index});
         }
       });   
     });
     return list;
-  };
+  }; */
 
   var self = {};
 
@@ -313,7 +313,7 @@ define([
     chrome.hid.send(connectionData.connectionId, 0, data.buffer, function(){});
   }
 
-  self.motorOn = function(name) {
+/*   self.motorOn = function(name) {
     turnDevicesOnOff(name, true);
   };
 
@@ -335,11 +335,39 @@ define([
     setTimeout(function() {
       turnDevicesOnOff(name, false);
     }, 1000 * time);
+  }; */
+
+  //self.resetAll = function() { turnDevicesOnOff('everything', false); }
+
+  
+  function setAll(onOff) {
+    var list = [];
+	//process multiple options
+    handler.connections.forEach(function(conn){      
+      conn.slots.forEach(function(slot, index){          
+        if (isMotor(slot.type) || isLight(slot.type))    
+        {
+          outputs.deviceOnOff(conn, index, onOff, false);
+        }
+      });   
+    });
   };
-
-  self.resetAll = function() { turnDevicesOnOff('everything', false); }
-
-  self.motorPower = function(name, power) {
+  
+  self.resetAll = function() { doAll(false); }
+  self.setAll = function(onOff) { doAll(onOff); }
+        
+  function doAll(onOff) {
+    handler.connections.forEach(function(conn){      
+      conn.slots.forEach(function(slot, index){          
+        if (isMotor(slot.type) || isLight(slot.type))    
+        {
+          outputs.deviceOnOff(conn, index, onOff, false);
+        }
+      });   
+    });
+  };
+    
+/*   self.motorPower = function(name, power) {
     getDevicesFor(name).forEach(function(device) {
       outputs.power(device.conn, device.index, power);
     });
@@ -352,8 +380,24 @@ define([
     getDevicesFor(name).forEach(function(device) {
       outputs.direction(device.conn, device.index, dir);
     });
+  } */
+
+  self.setOn = function(slotName) {
+    if (slotName=="all") doAll(true);  
+    if (!isOutputAt(slotName)) return;
+
+    var device = getDeviceAt(slotName);
+    outputs.deviceOnOff(device.conn, device.index, true, false);
   }
 
+  self.setOff = function(slotName) {
+    if (slotName=="all") doAll(false);  
+    if (!isOutputAt(slotName)) return;
+
+    var device = getDeviceAt(slotName);
+    outputs.deviceOnOff(device.conn, device.index, false, false);
+  }
+  
   self.setAt = function(slotName, state) {
     if (!isOutputAt(slotName)) return;
 
