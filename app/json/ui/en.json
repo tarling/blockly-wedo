@@ -31,7 +31,10 @@
     "bem-cut": "Cut",
     "bem-copy": "Copy",
     "bem-paste": "Paste",
-
+    "m-bled112": "Bluetooth",
+    "bm-port": "BLE Type",
+    "bm-scan": "Scan",
+    
     "MISSING_BLOCKS": "Please add the missing blocks",
 
     "MESSAGE_DEFAULT" : "Messages sent by \"display\" blocks will appear here",

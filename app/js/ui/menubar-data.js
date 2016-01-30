@@ -34,6 +34,16 @@ define(function ()
         {
           id: "bem-paste"
         }]
+    },
+    {
+      id: "m-bled112",
+      options: [
+      {
+        id: "bm-port"
+      },
+      {
+        id: "bm-scan"
+      }]   
     }]
   };
 

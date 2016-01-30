@@ -48,10 +48,17 @@ function(
               lang.ui.get("MERGE_PROJECT"), lang.ui.get("MERGE_PROMPT"), lang.ui.get("MERGE_ACTION"), lang.ui.get("DONT_MERGE_ACTION"), merge, dontMerge
             );
           });
-
           tabs.setActive(tabs.BLOCKS_TAB);
           break;
-      }
+        case "px-bm-port":  
+
+          break;
+
+        case "px-bm-scan":  
+
+          break;
+          
+        }
     });
 
     $(document).on('click',function(){
