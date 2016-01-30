@@ -6,12 +6,13 @@
 
     "cat01": "Start",
     "cat02": "Outputs",
-    "cat03": "Sensors",
+    "cat03": "Inputs",
     "cat04": "Delays",
     "cat05": "Loops",
     "cat06": "Variables",
     "cat07": "Computer",
-
+    "cat08": "Procedures",
+    
     "VALUE_CHANGED":"N.B. Your value has been changed from <strong>%1</strong> to <strong>%2</strong>",
     "BAD_VAR_NAME":"N.B. Variable names must start with a letter, and contain only letters, numbers or underscores",
     "RESERVED_VAR_NAME":"N.B. The name %1 is already used",
@@ -48,7 +49,7 @@
     "CANCEL_ACTION": "Cancel",
     "MERGE_PROJECT": "Merge project",
     "MERGE_PROMPT": "Do you want to merge the new project with your existing project?",
-    "MERGE_ACTION": "Merge projects",
-    "DONT_MERGE_ACTION": "Discard existing project"
+    "MERGE_ACTION": "Yes - Merge",
+    "DONT_MERGE_ACTION": "No - Start New"
 
 }

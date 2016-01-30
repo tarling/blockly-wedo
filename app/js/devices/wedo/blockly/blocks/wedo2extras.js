@@ -23,6 +23,7 @@ define([
 		  .appendField(new Blockly.FieldDropdown(ledColour), "colour")
           .appendField(lang.blocks.get("ON-WEDO"))
 		  .appendField(new Blockly.FieldDropdown(wedoList), "value");
+      this.data = 'WeDo2.0';
       this.setColour(constants.colors.output);
       this.setPreviousStatement(true);
       this.setNextStatement(true);
@@ -43,6 +44,7 @@ define([
 		  .appendField(new Blockly.FieldDropdown(wedoList), "value")
           .appendField(lang.blocks.get("FOR"));
       this.setInputsInline(false);
+      this.data = 'WeDo2.0';
 	  this.setColour(constants.colors.output);
       this.setPreviousStatement(true);
       this.setNextStatement(true);
@@ -58,9 +60,10 @@ define([
 	      .appendField(lang.blocks.get("ON-WEDO"))   
 	      .appendField(new Blockly.FieldDropdown(wedoList), "value");
       this.setInputsInline(false);
+      this.data = 'WeDo2.0';
+      this.setColour(constants.colors.delays);
       this.setPreviousStatement(true);
       this.setNextStatement(true);
-      this.setColour(constants.colors.delays);
       blockUtils.setupBlock(this);
     }
   };

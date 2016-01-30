@@ -21,10 +21,18 @@
         </value>
       </block>
       <block type="wedo_motor_direction"></block>
+      <block type="led_colour"></block>
+	  <block type="piezo">
+        <value name="time">
+          <block type="number">
+            <field name="value">100</field>
+          </block>
+        </value>
+      </block>     
     </category>
-    <category id="cat03" name="Sensors" colour="#7c5385">
+    <category id="cat03" name="Inputs" colour="#7c5385">
       <block type="wedo_if">
-        <field name="comp">&gt;</field>
+        <field name="comp">&lt;</field>
         <value name="input">
           <block type="sensor">
             <field name="sensor">A</field>
@@ -32,12 +40,12 @@
         </value>
         <value name="value">
           <block type="number">
-            <field name="value">30</field>
+            <field name="value">10</field>
           </block>
         </value>
       </block>
       <block type="wedo_if_else">
-        <field name="comp">&gt;</field>
+        <field name="comp">&lt;</field>
         <value name="input">
           <block type="sensor">
             <field name="sensor">A</field>
@@ -45,7 +53,7 @@
         </value>
         <value name="value">
           <block type="number">
-            <field name="value">30</field>
+            <field name="value">10</field>
           </block>
         </value>
       </block>
@@ -74,7 +82,7 @@
         </value>
       </block>
       <block type="wait_until">
-        <field name="comp">&gt;</field>
+        <field name="comp">&lt;</field>
         <value name="input">
           <block type="sensor">
             <field name="sensor">A</field>
@@ -82,7 +90,7 @@
         </value>
         <value name="value">
           <block type="number">
-            <field name="value">30</field>
+            <field name="value">10</field>
           </block>
         </value>
       </block>
@@ -93,6 +101,7 @@
           </block>
         </value>
       </block>
+      <block type="wait_until_button"></block>     
     </category>
     <category id="cat05" name="Loops" colour="#77ab41">
       <block type="repeat"></block>
@@ -104,7 +113,7 @@
         </value>
       </block>
       <block type="repeat_until">
-        <field name="comp">&gt;</field>
+        <field name="comp">&lt;</field>
         <value name="input">
           <block type="sensor">
             <field name="sensor">A</field>
@@ -112,7 +121,7 @@
         </value>
         <value name="value">
           <block type="number">
-            <field name="value">50</field>
+            <field name="value">10</field>
           </block>
         </value>
       </block>
@@ -129,7 +138,7 @@
         <field name="var">varA</field>
         <value name="value">
           <block type="number">
-            <field name="value">50</field>
+            <field name="value">10</field>
           </block>
         </value>
       </block>
@@ -182,15 +191,4 @@
       <block type="play_stop"></block>      
     </category>
 	<!-- <category id="cat08" name="Procedures" custom="PROCEDURE" colour="#7c5385"></category> -->
-    <category id="cat09" name="WeDo 2.0" colour="#808080">
-      <block type="led_colour"></block>
-	  <block type="piezo">
-        <value name="time">
-          <block type="number">
-            <field name="value">100</field>
-          </block>
-        </value>
-      </block>
-      <block type="wait_until_button"></block>
-    </category>
 </xml>
