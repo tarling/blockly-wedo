@@ -369,8 +369,8 @@ span.glyphicon.glyphicon-lock {
 .tab-pane.active {
   visibility: visible; }
 
-#tab-js {
-  display: none; }
+/* #tab-js {
+  display: none; } */
 
 body.locked {
   pointer-events: none; }
