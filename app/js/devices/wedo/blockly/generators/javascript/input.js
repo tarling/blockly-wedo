@@ -51,7 +51,7 @@ define(["../javascript"],function(generators){
 
   generators['sensor'] = function(block) {
     var dropdown_sensor = block.getFieldValue('sensor');
-    var code = 'wedo.get(\'' + dropdown_sensor + '\')';
+    var code = 'wedo.getInput(\'' + dropdown_sensor + '\')';
     return [code, generators.ORDER_NONE];
   };
 

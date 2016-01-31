@@ -17,6 +17,12 @@ define([
       reset: function() {
         usb.resetAll();
       },
+      resetAll: function() {
+        usb.resetAll();
+      },
+      getInput: function(slot) {
+        return usb.getSensorAt(slot);
+      },
       get: function(slot) {
         return usb.getSensorAt(slot);
       },
@@ -31,14 +37,23 @@ define([
           usb.setOff(slot);
         }
       },
-      setAt: function(slot, state) {
+      setMotor: function(slot, state) {
         usb.setAt(slot, state);
       },
-      power: function(slot, value) {
+      setPower: function(slot, value) {
         usb.powerAt(slot, parseFloat(value));
       },
-      direction: function(slot, value) {
+      setDirection: function(slot, value) {
         usb.directionAt(slot, value);
+      },
+      setLED: function(wedoSlot, color) {
+        //TODO
+      },
+      playNote: function(wedoSlot, note, octave, time) {
+        //TODO
+      },
+      getButton: function(wedoSlot) {
+        //TODO return usb.getSensorAt(slot);
       },
       playFile: function(file) {
         var path = "../../res/MP3/" + file; // + ".mp3";

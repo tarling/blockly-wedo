@@ -2,38 +2,38 @@ define(["../javascript"],function(generators){
 
   generators['wedo_turn_on'] = function(block) {
     var dropdown_slot = block.getFieldValue('slot');
-    var code = 'wedo.setAt(\'' + dropdown_slot + '\', true)'
+    var code = 'wedo.setMotor(\'' + dropdown_slot + '\', true)'
     return generators.wrap(block, code);
   };
   generators['wedo_turn_off'] = function(block) {
     var dropdown_slot = block.getFieldValue('slot');
-    var code = 'wedo.setAt(\'' + dropdown_slot + '\', false)'
+    var code = 'wedo.setMotor(\'' + dropdown_slot + '\', false)'
     return generators.wrap(block, code);
   };
   generators['wedo_everything_off'] = function(block) {
-    var code = 'wedo.reset()'
+    var code = 'wedo.resetAll()'
     return generators.wrap(block, code);
   };  
   generators['wedo_turn_on_for'] = function(block) {
     var dropdown_slot = block.getFieldValue('slot');
     var text_time = generators.valueToCode(block, 'time', generators.ORDER_ATOMIC);
-    var code = 'wedo.setAt(\'' + dropdown_slot + '\', true);\n';
+    var code = 'wedo.setMotor(\'' + dropdown_slot + '\', true);\n';
     code += generators.getInnerStepCode(block);
     code += 'wait.for(' + text_time + ');\n';
     code += generators.getInnerStepCode(block);
-    code += 'wedo.setAt(\'' + dropdown_slot + '\', false)'
+    code += 'wedo.setMotor(\'' + dropdown_slot + '\', false)'
     return generators.wrap(block, code);
   };
   generators['wedo_power'] = function(block) {
     var dropdown_slot = block.getFieldValue('slot');
     var text_power = generators.valueToCode(block, 'power', generators.ORDER_ATOMIC);
-    var code = 'wedo.power(\'' + dropdown_slot + '\', ' + text_power + ')'
+    var code = 'wedo.setPower(\'' + dropdown_slot + '\', ' + text_power + ')'
     return generators.wrap(block, code);
   };
   generators['wedo_motor_direction'] = function(block) {
     var dropdown_slot = block.getFieldValue('slot');
     var dropdown_direction = block.getFieldValue('direction');
-    var code = 'wedo.direction(\'' + dropdown_slot + '\', \'' + dropdown_direction + '\')'
+    var code = 'wedo.setDirection(\'' + dropdown_slot + '\', \'' + dropdown_direction + '\')'
     return generators.wrap(block, code);
   };
 
