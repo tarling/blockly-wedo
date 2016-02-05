@@ -32,8 +32,8 @@ define(function(){
     },
     comparisons: [["=", "=="], [">", ">"], ["<", "<"], [">=", ">="], ["<=", "<="], ["not =", "!="]],
     tilts: [["this way", "== 2"], ["that way", "== 4"], ["up", "== 3"], ["down", "== 1"], ["none", "== 0"], ["any way", "> 0"]],
-    ledColors: [["off", "0"], ["red", "1"], ["purple", "2"], ["cyan", "3"], ["blue", "4"], ["lime", "5"], ["green", "6"], ["yellow", "7"], ["orange", "8"], ["white","9"]],
-	notes: [["C", "0"], ["D", "1"], ["E", "F"], ["G", "3"], ["A", "4"], ["B", "5"], ["C", "6"]],
+    ledColors: [["off", "0"], ["pink", "1"], ["purple", "2"], ["blue", "3"], ["sky blue", "4"], ["teal", "5"], ["green", "6"], ["yellow", "7"], ["orange", "8"], ["red", "9"], ["white","10"]],
+	notes: [["C", "1"], ["C#", "2"], ["D", "3"], ["D#", "4"], ["E", "5"], ["F", "6"], ["F#", "7"], ["G", "8"], ["G#", "9"], ["A", "10"], ["A#", "11"], ["B", "12"]],
     octaves: octaves,
 	colors: {
       default: "#bbbbbb",

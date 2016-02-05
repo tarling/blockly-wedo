@@ -22,10 +22,11 @@
       </block>
       <block type="wedo_motor_direction"></block>
       <block type="led_colour"></block>
-	  <block type="piezo">
+      <block type="piezo">
+        <field name="octave">4</field>
         <value name="time">
           <block type="number">
-            <field name="value">100</field>
+            <field name="value">500</field>
           </block>
         </value>
       </block>     
