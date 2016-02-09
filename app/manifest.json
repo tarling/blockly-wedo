@@ -12,7 +12,10 @@
   "icons": { "16": "res/brick-16.png", "24": "res/brick-24.png", "128": "res/brick-128.png" },
   "bluetooth": {
       "low_energy": true,
-      "uuids": ["1800", "1801", "180a", "180f","00001523-1212-efde-1523-785feabcd123", "00004f0e-1212-efde-1523-785feabcd123"]
+      "uuids": ["1800", "1801", "180a", "180f",
+        "4dc591b0-857c-41de-b5f1-15abda665b0c",
+        "00001523-1212-efde-1523-785feabcd123", 
+        "00004f0e-1212-efde-1523-785feabcd123"]
   },
   "permissions": [
     "hid",
