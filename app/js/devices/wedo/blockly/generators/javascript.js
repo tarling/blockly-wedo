@@ -155,16 +155,25 @@ define([
 
     var startBlock;
     var ignored = [];
-
+    var comments = [];
+    
     var blocks = workspace.getTopBlocks(true);
     blocks.forEach(function(block){
-      if (block.startBlock == undefined)
+      if (block.type.indexOf("procedures_def") === 0)
+      {
+        //keep this block
+        return;
+      } else if (block.startBlock == undefined)
       {
         //disable block and all attached
         var b = block;
         do {
           b.setDisabled(true);
-          ignored.push(b);
+          if (b.type == 'comment') {
+            comments.push(b);
+          } else {
+            ignored.push(b);
+          }
           b = b.getNextBlock();
         } while (b);
       } else {
@@ -192,6 +201,10 @@ define([
 
     //re-enable ignored blocks
     ignored.forEach(function(block){
+      block.setDisabled(false);
+    });
+    //re-enable comments blocks
+    comments.forEach(function(block){
       block.setDisabled(false);
     });
 
