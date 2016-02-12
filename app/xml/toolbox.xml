@@ -162,7 +162,8 @@
       <block type="string"></block>
       <block type="number"></block>
     </category>
-    <category id="cat07" name="Computer" colour="#cc0000">
+	<category id="cat07" name="Procedures" custom="PROCEDURE" colour="#7c5385"></category>
+    <category id="cat08" name="Computer" colour="#cc0000">
       <block type="comment"></block>
       <block type="log_clear"></block>
       <block type="log">
@@ -191,5 +192,4 @@
       </block>
       <block type="play_stop"></block>      
     </category>
-	<!-- <category id="cat08" name="Procedures" custom="PROCEDURE" colour="#7c5385"></category> -->
 </xml>
