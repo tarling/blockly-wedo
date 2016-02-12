@@ -46,7 +46,6 @@ define(function(){
       loops: "#77ab41",
       computer: "#cc0000",
       procedures: "#7c5385",
-      PROCEDURES: "#7c5385",
       comment: "#fffacd"
     }
   }
