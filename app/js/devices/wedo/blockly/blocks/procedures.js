@@ -18,7 +18,7 @@ blockDefs['procedures_defnoreturn'] = {
   init: function() {
     this.arguments_ = [];
     this.setHelpUrl(lang.blocks.get("PROCEDURES_DEFNORETURN_HELPURL"));
-    this.setColour(constants.colors.PROCEDURES);
+    this.setColour(constants.colors.procedures);
     var name = BlocklyLib.Procedures.findLegalName(
         lang.blocks.get("PROCEDURES_DEFNORETURN_PROCEDURE"), this);
     var nameField = new BlocklyLib.FieldTextInput(name,
@@ -247,7 +247,7 @@ blockDefs['procedures_mutatorcontainer'] = {
    * @this BlocklyLib.Block
    */
   init: function() {
-    this.setColour(constants.colors.PROCEDURES);
+    this.setColour(constants.colors.procedures);
     this.appendDummyInput()
         .appendField(lang.blocks.get("PROCEDURES_MUTATORCONTAINER_TITLE"));
     this.appendStatementInput('STACK');
@@ -267,7 +267,7 @@ blockDefs['procedures_callnoreturn'] = {
    */
   init: function() {
     this.setHelpUrl(lang.blocks.get("PROCEDURES_CALLNORETURN_HELPURL"));
-    this.setColour(constants.colors.PROCEDURES);
+    this.setColour(constants.colors.procedures);
     this.appendDummyInput('TOPROW')
         .appendField(lang.blocks.get("PROCEDURES_CALLNORETURN_CALL"))
         .appendField('', 'NAME');
