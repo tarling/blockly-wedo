@@ -31,7 +31,7 @@
         </value>
       </block>     
     </category>
-    <category id="cat03" name="Inputs" colour="#7c5385">
+    <category id="cat03" name="Inputs" colour="#cc0000">
       <block type="wedo_if">
         <field name="comp">&lt;</field>
         <value name="input">
@@ -163,7 +163,7 @@
       <block type="number"></block>
     </category>
 	<category id="cat07" name="Procedures" custom="PROCEDURE" colour="#7c5385"></category>
-    <category id="cat08" name="Computer" colour="#cc0000">
+    <category id="cat08" name="Computer" colour="#505049">
       <block type="comment"></block>
       <block type="log_clear"></block>
       <block type="log">

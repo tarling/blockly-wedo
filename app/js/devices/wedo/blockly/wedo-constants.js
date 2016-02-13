@@ -41,10 +41,10 @@ define(function(){
       output: "#5ba5a5",
       delays: "#49a6d4",
       variables: "#d05f2d",
-      input: "#7c5385",
-      flow: "#b32d5e",
+      input: "#cc0000",
+      flow: "#cc0000",
       loops: "#77ab41",
-      computer: "#cc0000",
+      computer: "#505049",
       procedures: "#7c5385",
       comment: "#fffacd"
     }
