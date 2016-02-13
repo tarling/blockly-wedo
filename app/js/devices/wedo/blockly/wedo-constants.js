@@ -28,6 +28,7 @@ define(function(){
       NUMBER: "Number",
       STRING: "String",
       VARIABLE: "Variable",
+      EXPRESSION: "Expression",
       TILT: "Tilt"
     },
     comparisons: [["=", "=="], [">", ">"], ["<", "<"], [">=", ">="], ["<=", "<="], ["not =", "!="]],

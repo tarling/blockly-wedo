@@ -18,7 +18,7 @@ define([
       this.appendDummyInput()
           .appendField(lang.blocks.get("TO"));
       this.appendValueInput("value")
-          .setCheck([TYPES.NUMBER, TYPES.SENSOR, TYPES.VARIABLE]);
+          .setCheck([TYPES.NUMBER, TYPES.SENSOR, TYPES.VARIABLE, TYPES.EXPRESSION]);
       this.setInputsInline(true);
       this.setPreviousStatement(true);
       this.setNextStatement(true);
@@ -55,6 +55,42 @@ define([
     }
   };
 
+  blockDefs['var_op'] = {
+  init: function() {
+    this.appendValueInput("VAR1")
+         .setCheck([TYPES.NUMBER, TYPES.SENSOR, TYPES.VARIABLE]);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([
+          ["+", "+"],
+          ["-", "-"],
+          ["*", "*"],
+          //["**", "**"],
+          ["/", "/"]
+          //["%", "%"],
+          //["and", "and"],
+          //["or", "or"],
+          //["xor", "xor"],
+          //["max", "max"],
+          //["min", "min"]
+        ]), "OP");
+    this.appendValueInput("VAR2")
+         .setCheck([TYPES.NUMBER, TYPES.SENSOR, TYPES.VARIABLE, TYPES.EXPRESSION]);
+    this.setInputsInline(true);
+    this.setOutput(true, TYPES.EXPRESSION);
+    this.setTooltip('');
+    //this.setHelpUrl(constants.HELP_URL+"/../commands/let");
+    this.setColour(constants.colors.variables);
+    blockUtils.setupBlock(this);
+  },
+  getVars: function() {
+    return blockUtils.getAllVars(this, ["VAR1", "VAR2"]);
+  },
+  renameVar: function(oldName, newName) {
+    return blockUtils.renameVar(this, ["VAR1", "VAR2"], oldName, newName);
+  }
+};
+  
+  
   blockDefs['var_inc'] = {
     init: function() {
       this.appendDummyInput()

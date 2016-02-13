@@ -143,24 +143,35 @@
           </block>
         </value>
       </block>
+      <block type="var_set">
+        <field name="var">varA</field>
+        <value name="value">
+          <block type="var_op">
+          <field name="OP">+</field>
+        </block>
+      </value>
+    </block>
       <block type="var_random"></block>
       <block type="var_inc">
         <value name="value">
           <block type="number">
-            <field name="value">3</field>
+            <field name="value">1</field>
           </block>
         </value>
       </block>
       <block type="var_dec">
         <value name="value">
           <block type="number">
-            <field name="value">3</field>
+            <field name="value">1</field>
           </block>
         </value>
       </block>
       <block type="variable"></block>
+      <block type="number">
+        <field name="value">1</field>
+      </block>
+      <block type="var_op"></block>
       <block type="string"></block>
-      <block type="number"></block>
     </category>
 	<category id="cat07" name="Procedures" custom="PROCEDURE" colour="#7c5385"></category>
     <category id="cat08" name="Computer" colour="#505049">
