@@ -7,6 +7,12 @@ define(["../javascript"],function(generators){
     return generators.wrap(block, code);
   };
 
+  generators['var_random'] = function(block) {
+    var dropdown_var = block.getFieldValue('var');
+    var code = dropdown_var + ' = Math.round(Math.random() * 100)';
+    return generators.wrap(block, code);
+  };
+  
   generators['var_op'] = function(block) {
   var value_var1 = generators.valueToCode(block, 'VAR1', generators.ORDER_ATOMIC);
   var dropdown_op = block.getFieldValue('OP');
@@ -25,12 +31,6 @@ define(["../javascript"],function(generators){
       break;
     case "xor":
       dropdown_op = "^";
-      break;
-    case "*":
-      code = (value_var1 + "*" + value_var2);
-      break;
-    case "**":
-      code = (value_var1 + "*" + value_var2) + " / 0x10000";
       break;
     case "min":
       code = "Math.min(" + value_var1 + "," + value_var2 + ")";

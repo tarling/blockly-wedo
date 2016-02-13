@@ -134,7 +134,7 @@
         </value>
       </block>
     </category>
-    <category id="cat06" name="Variables" colour="#d05f2d">
+    <category id="cat06" name="Maths" colour="#d05f2d">
       <block type="var_set">
         <field name="var">varA</field>
         <value name="value">
@@ -173,7 +173,7 @@
       <block type="var_op"></block>
       <block type="string"></block>
     </category>
-	<category id="cat07" name="Procedures" custom="PROCEDURE" colour="#7c5385"></category>
+	<category id="cat07" name="Functions" custom="PROCEDURE" colour="#7c5385"></category>
     <category id="cat08" name="Computer" colour="#505049">
       <block type="comment"></block>
       <block type="log_clear"></block>
