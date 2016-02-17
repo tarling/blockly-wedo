@@ -33,9 +33,9 @@
     "bem-paste": "Paste",
     "m-bluetooth": "Bluetooth",
     "sm-ports": "Adapter",
-    "sm-ports-selectLabel": "Port (%1)",
+    "sm-ports-selectLabel": "Adapter (%1)",
     "sm-scan": "Scan",
-    "NO_PORTS": "No ports found",
+    "NO_PORTS": "No adapter found",
     
     "MISSING_BLOCKS": "Please add the missing blocks",
 

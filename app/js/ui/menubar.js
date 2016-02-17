@@ -97,7 +97,7 @@ define([
   	{
   		list.forEach(function (item)
   		{
-  		  el.append('<li data-value="' + item.id + '"><a href="#">'+ item.name + '&nbsp;' + item.displayName + '&nbsp;' + item.vendorId + '&nbsp;' + item.productId + '</a></li>');
+  		  el.append('<li data-value="' + item.id + '"><a href="#">'+ item.name + '</a></li>');
   		});
   	} else {
   		el.append('<li class="disabled"><a href="#">' + lang.get("NO_PORTS") + '</a></li>');
