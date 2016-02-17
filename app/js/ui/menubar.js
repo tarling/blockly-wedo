@@ -20,7 +20,23 @@ define([
         $(e.currentTarget)
           .addClass("activated");
       });
+      
+     $("#px-sm-ports")
+      .parent()
+      .on("selected.bs.dropdown", function (e)
+      {
+        var id = $(e.relatedTarget)
+          .attr("data-value");
+        self.portSelected.dispatch(id);
+      })  
 
+    $("#px-m-bluetooth")
+      .parent()
+      .on('show.bs.dropdown', function ()
+      {
+        self.settingsMenuShown.dispatch();
+      });  
+      
     $("nav a[id]")
       .on("click", function (event)
       {
@@ -69,9 +85,31 @@ define([
   self.init = init;
 
   self.itemClicked = new Signal(); //element id
-
+  self.settingsMenuShown = new Signal();
   self.menuShown = new Signal();
-
+  self.portSelected = new Signal(); //id
+  
+  self.makePortsMenu = function (list, selectedIndex)
+  {
+    var el = $("#px-sm-ports-menu");
+    el.empty();
+  	if (list.length > 0)
+  	{
+  		list.forEach(function (item)
+  		{
+  		  el.append('<li data-value="' + item.id + '"><a href="#">'+ item.name + '&nbsp;' + item.displayName + '&nbsp;' + item.vendorId + '&nbsp;' + item.productId + '</a></li>');
+  		});
+  	} else {
+  		el.append('<li class="disabled"><a href="#">' + lang.get("NO_PORTS") + '</a></li>');
+  	}
+    selectMenuItem(el, selectedIndex);
+  }
+  
+  self.selectPort = function (port)
+  {
+    selectValue($("#px-sm-ports-menu"), port);
+  }
+  
   self.enableItems = function (ids, enabled)
   {
     var prefix = "#px-";

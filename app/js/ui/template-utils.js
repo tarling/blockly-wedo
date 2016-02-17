@@ -16,7 +16,7 @@ define([
   var self = {};
 
   self.make = function(data, template, langSetter){
-    applyLanguage(data, langSetter);
+    if (langSetter) applyLanguage(data, langSetter);
 
     Mustache.parse(template);   // optional, speeds up future uses
 

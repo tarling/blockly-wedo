@@ -36,13 +36,19 @@ define(function ()
         }]
     },
     {
-      id: "m-bled112",
+      id: "m-bluetooth",
       options: [
       {
-        id: "bm-port"
+        id: "sm-ports",
+        selectable: true,
+        submenu:
+        {
+          id: "sm-ports-menu"
+        },
+        class: "dropdown-submenu"
       },
       {
-        id: "bm-scan"
+        id: "sm-scan"
       }]   
     }]
   };

@@ -31,9 +31,11 @@
     "bem-cut": "Cut",
     "bem-copy": "Copy",
     "bem-paste": "Paste",
-    "m-bled112": "Bluetooth",
-    "bm-port": "BLE Type",
-    "bm-scan": "Scan",
+    "m-bluetooth": "Bluetooth",
+    "sm-ports": "Adapter",
+    "sm-ports-selectLabel": "Port (%1)",
+    "sm-scan": "Scan",
+    "NO_PORTS": "No ports found",
     
     "MISSING_BLOCKS": "Please add the missing blocks",
 

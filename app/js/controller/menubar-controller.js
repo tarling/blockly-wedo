@@ -6,7 +6,8 @@ define( [
   ,"../ui/menubar"
   ,"../lang"
   ,"../block-editor/project"
-],
+  ,"../serial/serial-ports"
+  ],
 function(
   $
   , events
@@ -15,6 +16,7 @@ function(
   , menubar
   , lang
   , project
+  , ports
   ) {
 
     menubar.itemClicked.add(function (name)
@@ -50,11 +52,7 @@ function(
           });
           tabs.setActive(tabs.BLOCKS_TAB);
           break;
-        case "px-bm-port":  
-
-          break;
-
-        case "px-bm-scan":  
+        case "px-sm-scan":  
 
           break;
           
@@ -65,6 +63,21 @@ function(
     	if($('.collapse').collapse) $('.collapse').collapse('hide');
     });
 
+    var firstRun = true;
+    menubar.settingsMenuShown.add(function (id)
+    {
+      ports.requestList(function (list, selectedIndex)
+      {
+        menubar.makePortsMenu(list, firstRun ? selectedIndex : -1);
+        firstRun = false;
+      });
+    });
+  
+    menubar.portSelected.add(function (id)
+    {
+      //TODO ports.set(id);
+    });
+  
     events.inited.addOnce(function(){
       menubar.init();
       events.menuReady.dispatch();
