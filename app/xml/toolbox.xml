@@ -5,7 +5,6 @@
     <category id="cat02" name="Outputs" colour="#5ba5a5">
       <block type="wedo_turn_on"></block>
       <block type="wedo_turn_off"></block>
-      <block type="wedo_everything_off"></block>
       <block type="wedo_turn_on_for">
         <value name="time">
           <block type="number">

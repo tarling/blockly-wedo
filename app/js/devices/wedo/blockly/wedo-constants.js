@@ -5,11 +5,14 @@ define(function(){
   }
 
   var letterList = [];
+  var sensorList = [];
   for (var i = 0; i < 26; i++) {
     var ch = getChar(i);
-    letterList.push([ch, ch]);
+    letterList.push(["motor " + ch, ch]);
+    sensorList.push([ch, ch]);
   }
-
+  letterList.push(["everything", "all"]);
+    
   var wedoList = [];
   for (var i = 1; i < 14; i++) {
     wedoList.push([i.toString(), i.toString()]);
@@ -22,6 +25,7 @@ define(function(){
   
   return {
     letterList: letterList,
+    sensorList: sensorList,
     wedoList: wedoList,
     types: {
       SENSOR: "Sensor",

@@ -100,7 +100,7 @@ define([
     init: function() {
       this.appendDummyInput()
           .appendField(lang.blocks.get("SENSOR"))
-          .appendField(new Blockly.FieldDropdown(constants.letterList), "sensor");
+          .appendField(new Blockly.FieldDropdown(constants.sensorList), "sensor");
       this.setOutput(true, TYPES.SENSOR);
       this.setColour(constants.colors.input);
     }

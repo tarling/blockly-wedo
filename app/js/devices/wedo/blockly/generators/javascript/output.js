@@ -10,10 +10,6 @@ define(["../javascript"],function(generators){
     var code = 'wedo.setMotor(\'' + dropdown_slot + '\', false)'
     return generators.wrap(block, code);
   };
-  generators['wedo_everything_off'] = function(block) {
-    var code = 'wedo.resetAll()'
-    return generators.wrap(block, code);
-  };  
   generators['wedo_turn_on_for'] = function(block) {
     var dropdown_slot = block.getFieldValue('slot');
     var text_time = generators.valueToCode(block, 'time', generators.ORDER_ATOMIC);
