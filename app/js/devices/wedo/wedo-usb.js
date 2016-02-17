@@ -94,8 +94,6 @@ define([
     };
   }
 
-
-
   function setupNewInstance(connectionData) {
     connectionData.slots = [];
     connectionData.motorOffTime = 0;
@@ -197,15 +195,13 @@ define([
       out = getTilt(val);
     } else if (type == names.MOTION)
     {
-      out = getMotion(val)
+      out = getMotion(val);
     }
     return out;
   }
 
   function getTilt(rawValue) {
-    //http://scratched.gse.harvard.edu/sites/default/files/activities_for_lego_wedo_with_scratch_scripts.pdf
     var tilt;
-
     if (rawValue < 49) tilt = 3;//up
           else if (rawValue < 100) tilt = 2;//right
           else if (rawValue < 154) tilt = 0;//level
@@ -215,68 +211,10 @@ define([
   }
 
   function getMotion(rawValue) {
-
     var out = Math.round((100 * (rawValue - 70)) / 140);
     out = Math.max(0, Math.min(out, 100));
     return out;
   }
-
-/*   function turnDevicesOnOff(name, onOff, alreadyBraked) {
-    var list = getDevicesFor(name);
-    list.forEach(function(device) {
-      outputs.deviceOnOff(device.conn, device.index, onOff, alreadyBraked);
-    }, scope);
-  };
-
- function getDevicesFor(name) {
-    var list = [];
- 	var doLight;
-	var doMotor;
-		
-	switch(name) {
-	  case "everything":
-        doLight = true; 
-		doMotor = true;
-		break;
-	  case "lights":
-        doLight = true; 
-		break;		
-      case "motor":
-      case "all motors":
-      case "all%20motors":
-	    doMotor = true; 
-		break;		
-      default:
-		//must be single case if not one of the above
-	  
-	    var l = name.split(" ")[1]; 
-        var slot = getSlotFor(l);
-      
-        doLight = name.indexOf("light") == 0;
-        doMotor = name.indexOf("motor") == 0;
-      
-        var conn = getDataFor(l);
-        var index = INDEX_LOOK_UP[l][1];
-      
-        if ((doMotor && isMotor(slot.type)) || (doLight && isLight(slot.type)) || (doMotor && isLight(slot.type)))
-        {
-          list.push({conn:conn, index:index});
-        }
-	    return list; //single case, so can return now
-        break;
-    } 
-
-	//process multiple options
-    handler.connections.forEach(function(conn){      
-      conn.slots.forEach(function(slot, index){          
-        if ((doMotor && isMotor(slot.type)) || (doLight && isLight(slot.type)))  
-        {
-          list.push({conn:conn, index:index});
-        }
-      });   
-    });
-    return list;
-  }; */
 
   var self = {};
 
@@ -313,53 +251,10 @@ define([
     chrome.hid.send(connectionData.connectionId, 0, data.buffer, function(){});
   }
 
-/*   self.motorOn = function(name) {
-    turnDevicesOnOff(name, true);
-  };
-
-  self.motorOff = function(name, brake) {
-    if (brake == 'brake') {      //brake and then callback to coast
-      getDevicesFor(name).forEach(function(device) {
-        outputs.brake(device.conn, device.index);
-      });
-      setTimeout(function() {
-        turnDevicesOnOff(name, false, true);
-      }, outputs.motorBrakingTime);
-    }
-    else  //normal coast to brake
-      turnDevicesOnOff(name, false);
-  };
-
-  self.motorOnFor = function(name, time, uniqueID) {
-    turnDevicesOnOff(name, true);
-    setTimeout(function() {
-      turnDevicesOnOff(name, false);
-    }, 1000 * time);
-  }; */
-
-  //self.resetAll = function() { turnDevicesOnOff('everything', false); }
-
-  
-  function setAll(onOff) {
-    var list = [];
-	//process multiple options
+  function doSetAll(onOff) {
     handler.connections.forEach(function(conn){      
       conn.slots.forEach(function(slot, index){          
-        if (isMotor(slot.type) || isLight(slot.type))    
-        {
-          outputs.deviceOnOff(conn, index, onOff, false);
-        }
-      });   
-    });
-  };
-  
-  self.resetAll = function() { doAll(false); }
-  self.setAll = function(onOff) { doAll(onOff); }
-        
-  function doAll(onOff) {
-    handler.connections.forEach(function(conn){      
-      conn.slots.forEach(function(slot, index){          
-        if (isMotor(slot.type) || isLight(slot.type))    
+        if (isOutput(slot.type))    
         {
           outputs.deviceOnOff(conn, index, onOff, false);
         }
@@ -367,38 +262,36 @@ define([
     });
   };
     
-/*   self.motorPower = function(name, power) {
-    getDevicesFor(name).forEach(function(device) {
-      outputs.power(device.conn, device.index, power);
+  function doPowerAll(power) {
+    handler.connections.forEach(function(conn){      
+      conn.slots.forEach(function(slot, index){          
+        if (isOutput(slot.type))    
+        {
+          outputs.power(conn, index, power);
+        }
+      });   
     });
-
-    if (power == 0) turnDevicesOnOff(name, false);
-    else  turnDevicesOnOff(name, true);
-  };
-
-  self.motorDirection = function(name, dir) {
-    getDevicesFor(name).forEach(function(device) {
-      outputs.direction(device.conn, device.index, dir);
+  };    
+    
+  function doDirectionAll(dir) {
+    handler.connections.forEach(function(conn){      
+      conn.slots.forEach(function(slot, index){          
+        if (isOutput(slot.type))    
+        {
+          outputs.direction(conn, index, dir);
+        }
+      });   
     });
-  } */
-
-  self.setOn = function(slotName) {
-    if (slotName=="all") doAll(true);  
-    if (!isOutputAt(slotName)) return;
-
-    var device = getDeviceAt(slotName);
-    outputs.deviceOnOff(device.conn, device.index, true, false);
-  }
-
-  self.setOff = function(slotName) {
-    if (slotName=="all") doAll(false);  
-    if (!isOutputAt(slotName)) return;
-
-    var device = getDeviceAt(slotName);
-    outputs.deviceOnOff(device.conn, device.index, false, false);
-  }
+  };        
+    
+  self.resetAll = function() { doSetAll(false); }
+  self.setAll = function(onOff) { doSetAll(onOff); }
   
   self.setAt = function(slotName, state) {
+    if (slotName=="all") {
+      doSetAll(state);
+      return;
+    }  
     if (!isOutputAt(slotName)) return;
 
     var device = getDeviceAt(slotName);
@@ -406,6 +299,11 @@ define([
   }
 
   self.powerAt = function(slotName, power) {
+    if (slotName=="all") {
+      doPowerAll(power);
+      doSetAll(power != 0);      
+      return;
+    }    
     if (!isOutputAt(slotName)) return;
 
     var device = getDeviceAt(slotName);
@@ -415,6 +313,10 @@ define([
   }
 
   self.directionAt = function(slotName, dir) {
+    if (slotName=="all") {
+      doDirectionAll(dir);
+      return;
+    }    
     if (!isOutputAt(slotName)) return;
 
     var device = getDeviceAt(slotName);
