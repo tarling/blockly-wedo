@@ -170,7 +170,7 @@
         <field name="value">1</field>
       </block>
       <block type="var_op"></block>
-      <block type="string"></block>
+      <!-- <block type="string"></block> -->
     </category>
 	<category id="cat07" name="Functions" custom="PROCEDURE" colour="#7c5385"></category>
     <category id="cat08" name="Computer" colour="#505049">
