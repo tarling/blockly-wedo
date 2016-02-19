@@ -148,7 +148,6 @@ define([
   generator.workspaceToCode = function(step) {
 
     stepMode = step;
-    stepMode = true;
 
     innerStepsLookup = {};
     var workspace = Blockly.mainWorkspace;

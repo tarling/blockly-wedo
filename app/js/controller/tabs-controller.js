@@ -38,7 +38,7 @@ function(
         xmlEditor.setContent(project.getXml(true));
         break;
       case tabs.JS_TAB:
-        jsEditor.setContent(jsGenerator.workspaceToCode());
+        jsEditor.setContent(jsGenerator.workspaceToCode(false));
         break;
     }
   });

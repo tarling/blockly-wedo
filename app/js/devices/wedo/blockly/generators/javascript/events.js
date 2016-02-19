@@ -1,7 +1,7 @@
-define(["../javascript"],function(generators){
+define(["../javascript" , "../../../../../lang"],function(generators, lang){
 
   generators['when_start_clicked'] = function(block) {
-    var code = "//start";
+    var code = "// " + lang.blocks.get("START-CLICKED");
     return generators.wrap(block, code);
   };
 
