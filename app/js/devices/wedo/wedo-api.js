@@ -16,9 +16,7 @@ define([
     wedo: {
       reset: function() {
         usb.resetAll();
-      },
-      resetAll: function() {
-        usb.resetAll();
+        blocklyAudio.stop();
       },
       getInput: function(slot) {
         return usb.getSensorAt(slot);
