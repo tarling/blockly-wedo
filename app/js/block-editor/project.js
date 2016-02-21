@@ -197,6 +197,7 @@ define([
   project.reset = function ()
   {
     messages.clear();
+    defaultFilename = "wedo.xml";
 
     //Use example workspace XML
     Blockly.Xml.domToWorkspace(Blockly.mainWorkspace, exampleXml);
