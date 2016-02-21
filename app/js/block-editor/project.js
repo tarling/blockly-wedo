@@ -106,6 +106,7 @@ define([
   //var ids = [];
   var savedSettings = {};
   var exampleXml;
+  var defaultFilename = "wedo.xml";
 
   var project = {};
   project.dirty = false;
@@ -168,6 +169,7 @@ define([
   {
     filesystem.loadText("xml", function (filename, content)
     {
+      defaultFilename = filename;
       parseProject(content, getMergeDecision);
     });
   }
@@ -186,8 +188,9 @@ define([
 
   project.save = function ()
   {
-    filesystem.save(project.getXml(), 'text/xml', 'wedo.xml', function(){
+    filesystem.save(project.getXml(), 'text/xml', defaultFilename, function(fileName){
       project.dirty = false;
+      if (typeof fileName != "undefined") defaultFilename = fileName;
     },function(){});
   }
 
