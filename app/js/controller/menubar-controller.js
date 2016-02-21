@@ -44,6 +44,24 @@ function(
           project.save();
           break;
         case "px-pm-open":
+          function proceed()
+          {
+            project.load(false);
+            tabs.setActive(tabs.BLOCKS_TAB);
+          }
+          if (project.dirty)
+          {
+            modals.showMessageModal(
+              lang.ui.get("WARNING"), lang.ui.get("LOSE_CHANGES_WARNING"), lang.ui.get("OK_ACTION"), lang.ui.get("CANCEL_ACTION"), proceed,
+              function () {}
+            );
+          }
+          else
+          {
+            proceed();
+          }
+          break;
+        case "px-pm-merge":
           project.load(function (merge, dontMerge)
           {
             modals.showMessageModal(

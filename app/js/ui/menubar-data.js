@@ -13,6 +13,9 @@ define(function ()
         id: "pm-open"
       },
       {
+        id: "pm-merge"
+      },
+      {
         id: "pm-save"
       }]
     },
