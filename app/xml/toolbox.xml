@@ -197,6 +197,14 @@
           </block>
         </value>
       </block>
+      <block type="say">
+        <value name="value">
+          <block type="string">
+            <field name="value">Hello world!</field>
+          </block>
+        </value>
+      </block>
+      <block type="say_stop"></block>
       <block type="play_file">
         <field name="value">0001.MP3</field>
       </block>

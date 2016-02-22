@@ -17,6 +17,7 @@ define([
       reset: function() {
         usb.resetAll();
         blocklyAudio.stop();
+        chrome.tts.stop();
       },
       getInput: function(slot) {
         return usb.getSensorAt(slot);

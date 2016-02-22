@@ -17,6 +17,17 @@ define(["../javascript"],function(generators){
     return generators.wrap(block, code);
   };
 
+  generators['say'] = function(block) {
+    var value_value = generators.valueToCode(block, 'value', generators.ORDER_ATOMIC);
+    var code = 'message.say(' + value_value + ')';
+    return generators.wrap(block, code);
+  };
+
+  generators['say_stop'] = function(block) {
+    var code = 'message.sayStop()'
+    return generators.wrap(block, code);
+  }; 
+  
   generators['play_file'] = function(block) {
     var text_value = block.getFieldValue('value');
     text_value = text_value.replace(/'/g, "\'")

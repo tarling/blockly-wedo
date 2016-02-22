@@ -46,6 +46,30 @@ define([
     }
   };
 
+  blockDefs['say'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField(lang.blocks.get("SAY"));
+      this.appendValueInput("value")
+          .setCheck([TYPES.STRING, TYPES.NUMBER]);
+      this.setInputsInline(true);
+      this.setPreviousStatement(true);
+      this.setNextStatement(true);
+      this.setColour(constants.colors.computer);
+      blockUtils.setupBlock(this);
+    }
+  };  
+
+  blockDefs['say_stop'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField(lang.blocks.get("SAY-STOP"));
+      this.setPreviousStatement(true);
+      this.setNextStatement(true);
+      this.setColour(constants.colors.computer);
+    }
+  };
+  
   blockDefs['play_file'] = {
     init: function() {
       this.appendDummyInput()

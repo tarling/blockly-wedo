@@ -27,6 +27,8 @@
   "SET-POWER": "set power of ",
   "SET-DIRECTION": "set direction of",
   "SET-LED": "set LED",
+  "SAY": "say",
+  "SAY-STOP": "stop saying",
   "PLAY": "play",
   "PLAY-NOTE": "play note",
   "PLAY-FILE": "play file",
