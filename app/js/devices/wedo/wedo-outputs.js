@@ -92,7 +92,7 @@ define(["./wedo-names"], function(names) {
       case names.THAT_WAY:
           newDir = -1;
           break;
-      case names.REVERSE:
+      case names.OTHER_WAY:
           newDir = 0;
           break;
       default:

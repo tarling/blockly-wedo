@@ -1,8 +1,13 @@
-define(function(){
+define(["../wedo-names"], function(names) {
 
   function getChar(index) {
     return String.fromCharCode(65+index);
   }
+
+  var directions = [];
+  directions.push(["this way", names.THIS_WAY]);
+  directions.push(["that way", names.THAT_WAY]);
+  directions.push(["other way", names.OTHER_WAY]);
 
   var letterList = [];
   var sensorList = [];
@@ -24,6 +29,7 @@ define(function(){
   }
   
   return {
+    directions: directions,
     letterList: letterList,
     sensorList: sensorList,
     wedoList: wedoList,

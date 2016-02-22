@@ -23,30 +23,8 @@ define([
   - tilt
   */
 
-  var outputs, directions;
-
-  var inited = false;
-  function initMsg() {
-    if (inited) return;
-    //motor/all motors/lights/everything
-    outputs = [
-      //[label, ID]
-      [lang.blocks.get("MOTOR"), "motor"],
-      [lang.blocks.get("LIGHTS"), "lights"]
-    ];
-
-    directions = [
-      [lang.blocks.get("THIS-WAY"), names.THIS_WAY],
-      [lang.blocks.get("THAT-WAY"), names.THAT_WAY],
-      [lang.blocks.get("REVERSE"), names.REVERSE],
-    ];
-
-    inited = true;
-  }
-
   blockDefs['wedo_turn_on'] = {
     init: function() {
-      initMsg();
       this.appendDummyInput()
           .appendField(lang.blocks.get("TURN"))
           .appendField(new Blockly.FieldDropdown(constants.letterList), "slot")
@@ -60,7 +38,6 @@ define([
 
   blockDefs['wedo_turn_off'] = {
     init: function() {
-      initMsg();
       this.appendDummyInput()
           .appendField(lang.blocks.get("TURN"))
           .appendField(new Blockly.FieldDropdown(constants.letterList), "slot")
@@ -74,7 +51,6 @@ define([
  
   blockDefs['wedo_turn_on_for'] = {
     init: function() {
-      initMsg();
       this.appendDummyInput()
           .appendField(lang.blocks.get("TURN"))
           .appendField(new Blockly.FieldDropdown(constants.letterList), "slot")
@@ -93,7 +69,6 @@ define([
 
   blockDefs['wedo_power'] = {
     init: function() {
-      initMsg();
       this.appendDummyInput()
           .appendField(lang.blocks.get("SET-POWER"))
           .appendField(new Blockly.FieldDropdown(constants.letterList), "slot")
@@ -114,7 +89,7 @@ define([
           .appendField(lang.blocks.get("SET-DIRECTION"))
           .appendField(new Blockly.FieldDropdown(constants.letterList), "slot")
           .appendField(lang.blocks.get("TO"))
-          .appendField(new Blockly.FieldDropdown(directions), "direction");
+          .appendField(new Blockly.FieldDropdown(constants.directions), "direction");
       this.setColour(constants.colors.output);
       this.setPreviousStatement(true);
       this.setNextStatement(true);

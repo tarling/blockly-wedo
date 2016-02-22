@@ -24,7 +24,7 @@ define(function() {
 
     THIS_WAY: "this way",
     THAT_WAY: "that way",
-    REVERSE: "reverse"
+    OTHER_WAY: "other way"
   }
 
 })
