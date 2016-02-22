@@ -19,6 +19,10 @@ function(
   , jsGenerator
   ) {
 
+  events.requestBlocklyRedraw.add(function(){
+    if (Blockly && Blockly.mainWorkspace) Blockly.fireUiEvent(Blockly.mainWorkspace.getCanvas(), 'resize');
+  });
+
   tabs.tabSelected.add(function (newTab, oldTab)
   {
     switch (oldTab)
@@ -32,7 +36,7 @@ function(
     {
       case tabs.BLOCKS_TAB:
         messages.clear();
-        Blockly.mainWorkspace.render();
+        events.requestBlocklyRedraw.dispatch();
         break;
       case tabs.XML_TAB:
         xmlEditor.setContent(project.getXml(true));

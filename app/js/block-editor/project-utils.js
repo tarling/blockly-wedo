@@ -1,4 +1,6 @@
-define(function ()
+define([
+  "../events"
+], function (events)
 {
   function deselectBlock(id) {
       var b = Blockly.mainWorkspace.getBlockById(id);
@@ -185,7 +187,7 @@ define(function ()
       }
       return found;
     });
-    Blockly.mainWorkspace.render();
+    events.requestBlocklyRedraw.dispatch();
   }
 
   self.clearDisabled = function() {
@@ -193,7 +195,7 @@ define(function ()
       block.setDisabled(false);
     });
     disabled = [];
-    Blockly.mainWorkspace.render();
+    events.requestBlocklyRedraw.dispatch();
   }
 
   return self;

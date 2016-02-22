@@ -14,6 +14,7 @@ define([
   self.selectionChange = new Signal();
   self.inited = new Signal();
   self.menuReady = new Signal();
+  self.requestBlocklyRedraw = new Signal();
 
   return self;
 
