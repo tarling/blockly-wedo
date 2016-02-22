@@ -24,20 +24,20 @@ function(
       switch (name)
       {
         case "px-pm-new":
-          function proceed()
+          function proceedNew()
           {
             project.discard();
           }
           if (project.dirty)
           {
             modals.showMessageModal(
-              lang.ui.get("WARNING"), lang.ui.get("LOSE_CHANGES_WARNING"), lang.ui.get("NEW_PROJECT_ACTION"), lang.ui.get("CANCEL_ACTION"), proceed,
+              lang.ui.get("WARNING"), lang.ui.get("LOSE_CHANGES_WARNING"), lang.ui.get("NEW_PROJECT_ACTION"), lang.ui.get("CANCEL_ACTION"), proceedNew,
               function () {}
             );
           }
           else
           {
-            proceed();
+            proceedNew();
           }
           break;
         case "px-pm-save":
