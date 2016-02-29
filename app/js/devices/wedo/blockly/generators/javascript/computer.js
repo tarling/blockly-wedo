@@ -2,7 +2,7 @@ define(["../javascript"],function(generators){
 
   generators['comment'] = function(block) {
     var value_value = generators.valueToCode(block, 'value', generators.ORDER_ATOMIC);
-    var code = '/*\n' + value_value + '\n*/';
+    var code = '/* ' + value_value.trim() + ' */';
     return generators.wrap(block, code);
   };
 
