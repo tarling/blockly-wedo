@@ -6,7 +6,8 @@ define(function(){
   self.PRESTEP_PREFIX = "blocklyPreStep";
   self.POSTSTEP_PREFIX = "blocklyPostStep";
   self.WARNING_COMMAND = "blocklyWarning";
-
+  self.STOP_PREFIX = "blocklyStop";
+  
   self.parseMsg = {};
 
   self.parseMsg.types = {

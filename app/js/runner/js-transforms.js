@@ -33,6 +33,9 @@ define([
     //replace post step with an end tag
     code = code.replace(new RegExp(whiteR + blocklyConstants.POSTSTEP_PREFIX + "\\(([0-9]*)\\);", "g"), "<!--$1-->" + endTag);
 
+    //replace stop with an end tag
+    code = code.replace(new RegExp(whiteR + blocklyConstants.STOP_PREFIX + "\\(([0-9]*)\\);", "g"), "<!--$1-->" + endTag);
+    
     return code;
   }
 

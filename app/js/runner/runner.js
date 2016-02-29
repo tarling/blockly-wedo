@@ -87,10 +87,15 @@ define([
           }));
 
       intrprtr.setProperty(scope, blocklyConstants.POSTSTEP_PREFIX,
-          intrprtr.createNativeFunction(function(id, isProcCall) {
+          intrprtr.createNativeFunction(function(id) {
             return intrprtr.createPrimitive(blocklyPostStep(id.valueOf()));
           }));
 
+      intrprtr.setProperty(scope, blocklyConstants.STOP_PREFIX,
+          intrprtr.createNativeFunction(function() {
+            return intrprtr.createPrimitive(blocklyStop());
+          }));
+          
       intrprtr.setProperty(scope, blocklyConstants.INNERSTEP_PREFIX,
           intrprtr.createNativeFunction(function(id) {
             return intrprtr.createPrimitive(blocklyInnerStep(id.valueOf()));
@@ -132,6 +137,11 @@ define([
     self.hitWarning.dispatch(id);
   }
 
+  function blocklyStop(){
+    self.complete.dispatch();
+    reset();
+  }
+  
   function stopped() {
     waiting = false;
     simPaused = true;

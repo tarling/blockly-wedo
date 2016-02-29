@@ -100,7 +100,8 @@ define([
     ,blocklyConstants.PRESTEP_PREFIX
     ,blocklyConstants.POSTSTEP_PREFIX
     ,blocklyConstants.WARNING_COMMAND
-  ].join(","))
+    ,blocklyConstants.STOP_PREFIX
+    ].join(","))
 
   /**
    * Initialise the database of variable names.
@@ -291,6 +292,9 @@ define([
     if (stepMode)
     {
       code = blocklyConstants.PRESTEP_PREFIX + "(" + block.id + ");\n" + code;
+      if (block.type.indexOf("procedures_def") === 0) {
+        code = blocklyConstants.STOP_PREFIX + "();\n" + code;        
+      }
       if (block.warning){
         code = blocklyConstants.WARNING_COMMAND + "(" + block.id + ");\n" + code;
       }
