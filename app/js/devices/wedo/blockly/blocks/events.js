@@ -18,6 +18,10 @@ define([
       this.setColour(constants.colors.start);
       this.setDeletable(false);
       this.startBlock = true;
+      if (!this.isInFlyout)
+      {
+        blockUtils.addStart(this);
+      }
     }
   };
 

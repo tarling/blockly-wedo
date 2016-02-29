@@ -45,6 +45,14 @@ define([
     });
   }
 
+  self.startBlocks = [];
+  
+  self.addStart = function(block) {
+      self.startBlocks.push(block);
+      //When we add a start we give it startIndex priority so outputs at top of code listing
+      block.startIndex = self.startBlocks.length;
+  }
+  
   return self;
 
 });
