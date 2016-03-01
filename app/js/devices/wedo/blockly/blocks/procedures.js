@@ -40,6 +40,16 @@ blockDefs['procedures_defnoreturn'] = {
   },
   onchange: blockUtils.checkInputs,
   /**
+   * Initialization of the block has completed, clean up anything that may be
+   * inconsistent as a result of the XML loading.
+   * @this BlocklyLib.Block
+   */
+  validate: function () {
+    var name = BlocklyLib.Procedures.findLegalName(
+        this.getFieldValue('NAME'), this);
+    this.setFieldValue(name, 'NAME');
+  },
+  /**
    * Add or remove the statement block from this function definition.
    * @param {boolean} hasStatements True if a statement block is needed.
    * @this BlocklyLib.Block
