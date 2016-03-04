@@ -11,7 +11,7 @@ define(["../wedo-names"], function(names) {
 
   var letterList = [];
   var sensorList = [];
-  for (var i = 0; i < 26; i++) {
+  for (var i = 0; i < 10; i++) {
     var ch = getChar(i);
     letterList.push(["motor " + ch, ch]);
     sensorList.push([ch, ch]);
@@ -19,7 +19,7 @@ define(["../wedo-names"], function(names) {
   letterList.push(["everything", "all"]);
     
   var wedoList = [];
-  for (var i = 1; i < 14; i++) {
+  for (var i = 1; i < 6; i++) {
     wedoList.push([i.toString(), i.toString()]);
   }
 
