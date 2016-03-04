@@ -31,7 +31,7 @@ define(["../javascript"],function(generators){
     code += generators.getInnerStepCode(block);
     code += ' ' + statements_block + ';\n';
     code += generators.getInnerStepCode(block);
-    code += '} while (' + input_value + ' ' + dropdown_comp + ' ' + value_value + ')';
+    code += '} while !(' + input_value + ' ' + dropdown_comp + ' ' + value_value + ')';
     return generators.wrap(block, code);
   };
 
@@ -43,7 +43,7 @@ define(["../javascript"],function(generators){
     code += generators.getInnerStepCode(block);
     code += ' ' + statements_block + ';\n';
     code += generators.getInnerStepCode(block);
-    code += '} while (' + input_value + ' ' + tilt_value + ')';
+    code += '} while !(' + input_value + ' ' + tilt_value + ')';
     return generators.wrap(block, code);
   };
 
