@@ -10,7 +10,7 @@ After cloning this repo, go to your [Extensions settings page](chrome://extensio
 
 Build
 -
-This project uses gulp for various build tasks. After the usual install of node, npm and grunt, run `npm install` to install dependencies.
+This project uses gulp for various build tasks. After the usual install of node, npm and gulp, run `npm install` to install dependencies.
 
 The CSS is generated from SASS files in /src/sass. After making changes to the SASS files, run `gulp sass` to export the CSS into the /app/css folder. Or run `gulp sass:watch` to run a watch process that will monitor changes to the SASS and automatically export the CSS.
 
